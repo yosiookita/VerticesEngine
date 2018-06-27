@@ -4,7 +4,7 @@
         <img src="https://img.shields.io/twitter/follow/virtexedge.svg?style=social&logo=twitter"
             alt="follow on Twitter"></a>
 
-is an in-house developed game engine based in and built from the ground up in C#. It uses @MonoGame as it's back end allowing it to run cross platform on PC, OSX, Linux, iOS and Android.
+The Vertices Engine is the in-house developed game engine from @VirtexEdgeDesign & @rtroe based in and built from the ground up in C#. It uses @MonoGame as it's back end allowing it to run cross platform on PC, OSX, Linux, iOS and Android.
 
 There are recently released Nuget packages which can be found through the badge links below so that users can play around with Vertices on their own machines.
            
