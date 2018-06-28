@@ -1,8 +1,7 @@
 # Vertices Engine Tempaltes
 
 <a href="https://twitter.com/intent/follow?screen_name=virtexedge">
-        <img src="https://img.shields.io/twitter/follow/virtexedge.svg?style=social&logo=twitter"
-            alt="follow on Twitter"></a>
+        <img src="https://img.shields.io/twitter/follow/virtexedge.svg?style=social&logo=twitter" alt="follow on Twitter"></a>
 
 The Vertices Engine is the in-house developed game engine from @VirtexEdgeDesign & @rtroe based in and built from the ground up in C#. It uses @MonoGame as it's back end allowing it to run cross platform on PC, OSX, Linux, iOS and Android.
 
@@ -38,14 +37,14 @@ A number of currently released and up coming games use vertices, you can find an
 
 The Chaotic Workshop is a mobile Rube Goldberg style puzzle game involving you to use your creativity and problem solving along with the toolbox of over 70 items to solve 50 backwards, mind bending puzzles in the game.
 
-The Chaotic Workshop is available on Android and iOS here.
+The Chaotic Workshop is available on <a href="http://games.virtexedge.com/TheChaoticWorkshop/">Android and iOS here</a>.
 
 ## Space Esc8bit
 [![cws](https://rtroe.github.io/img/headers/header_spcescbt.png)](http://games.virtexedge.com/SpaceEsc8bit/)
 
 Space Esc8bit is a fast paced, 8-bit themed mobile missile run game, with the goal to both get as high an altitude as possible by out-maneuvering as many missiles as possible.
 
-It's out on Android and iOS now.
+It's out on <a href="http://games.virtexedge.com/SpaceEsc8bit/">Android and iOS now</a>.
 
 ## Metric Racer
 [![cws](https://rtroe.github.io/img/headers/header_metric.png)](http://games.virtexedge.com/MetricRacer/)
@@ -122,3 +121,7 @@ Vertices comes with a extensible and plug-and-play renderering pipeline. There i
 The renderering pipeline comes with a number of debug options as well, allowing to see what the scene looks like at each stage of the pre and post processing.
 
 <img src="https://i.imgur.com/8YTpuvY.png" width="500" height="300" />
+
+# Support
+
+Verties is in active development currently and therefore may have some bugs. You can open issues here or get in touch with us on Twitter through the links at the top.
