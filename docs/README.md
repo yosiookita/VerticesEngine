@@ -58,7 +58,7 @@ Metric will be launching late 2018 on PC, OSX, Linux, as well as a mobile port o
 ## Cross Platform
 Vertices runs on PC, OSX, Linux, iOS and Android and is coming to consoles soon.
 
-<img src="https://i.imgur.com/cvRHBXV.png" width="500" height="300" />
+<img src="https://i.imgur.com/cvRHBXV.png" width="500" height="100" />
 
 ## In-game Sandbox for Rapid Level Design
 A number of Vertices games are sandbox based, and so the engine is built an integrated in-game editor to add, modify and change a game on the fly.
