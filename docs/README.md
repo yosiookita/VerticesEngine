@@ -59,11 +59,12 @@ Metric will be launching late 2018 on PC, OSX, Linux, as well as a mobile port o
 ## Cross Platform
 Vertices runs on PC, OSX, Linux, iOS and Android and is coming to consoles soon.
 
-## Extendable in-game Sandbox for Rapid Level design
+## In-game Sandbox for Rapid Level Design
 A number of Vertices games are sandbox based, and so the engine is built an integrated in-game editor to add, modify and change a game on the fly.
+
 <img src="https://i.imgur.com/wnCtNGX.png" width="500" height="300" />
 
-## Terrain Editor
+## Integrated Terrain Editor
 <img src="https://i.imgur.com/sPTtg9W.png" width="500" height="300" />
 
 ## Customizable and Sinkable GUI system
@@ -71,7 +72,7 @@ Vertices supports a number of GUI elements from basic buttons and toolbars to mo
 
 <img src="https://virtexedgedesign.github.io/VerticesEngine/imgs/features/sandbox.png" width="500" height="300" />
 
-## Integrated Debug System and Console
+## Integrated Debug System
 To help with game development and profiling, Vertices comes with a number of debug profilers and tools.
 
 <img src="https://i.imgur.com/VYCcuGF.png" width="500" height="300" />
