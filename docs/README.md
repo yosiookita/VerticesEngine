@@ -30,6 +30,30 @@ There are recently released Nuget packages which can be found through the badge 
 [nugetTBD]: https://img.shields.io/badge/nuget-comingsoon-orange.svg
 [nugetNA]: https://img.shields.io/badge/nuget-deprecetated-lightgray.svg
 
+# Games
+A number of currently released and up coming games use vertices, you can find an outline below:
+
+## The Chaotic Workshop
+[![cws](https://rtroe.github.io/img/headers/header_crtn.png)](http://games.virtexedge.com/TheChaoticWorkshop/)
+
+The Chaotic Workshop is a mobile Rube Goldberg style puzzle game involving you to use your creativity and problem solving along with the toolbox of over 70 items to solve 50 backwards, mind bending puzzles in the game.
+
+The Chaotic Workshop is available on Android and iOS here.
+
+## Space Esc8bit
+[![cws](https://rtroe.github.io/img/headers/header_spcescbt.png)](http://games.virtexedge.com/SpaceEsc8bit/)
+
+Space Esc8bit is a fast paced, 8-bit themed mobile missile run game, with the goal to both get as high an altitude as possible by out-maneuvering as many missiles as possible.
+
+It's out on Android and iOS now.
+
+## Metric Racer
+[![cws](https://rtroe.github.io/img/headers/header_metric.png)](http://games.virtexedge.com/MetricRacer/)
+
+Metric Racer is a fast paced futuristic racer. Multiple tracks, local multiplayer, and a built-in track editor, your speed and creativity are your only limits.
+
+Metric will be launching late 2018 on PC, OSX, Linux, as well as a mobile port on iOS and Android in 2019.
+
 # Features
 
 ## Cross Platform
@@ -37,32 +61,36 @@ Vertices runs on PC, OSX, Linux, iOS and Android and is coming to consoles soon.
 
 ## Extendable in-game Sandbox for Rapid Level design
 A number of Vertices games are sandbox based, and so the engine is built an integrated in-game editor to add, modify and change a game on the fly.
-![sandbox](https://virtexedgedesign.github.io/VerticesEngine/imgs/features/sandbox.png)
+![sandbox](https://i.imgur.com/wnCtNGX.png)
+
+## Terrain Editor
+![terrain](https://i.imgur.com/sPTtg9W.png)
 
 ## Customizable and Sinkable GUI system
 Vertices supports a number of GUI elements from basic buttons and toolbars to more advanced Ribbon Bars and Property Grib controls.
-![gui](https://virtexedgedesign.github.io/VerticesEngine/imgs/features/gui.png)
+![sandbox](https://virtexedgedesign.github.io/VerticesEngine/imgs/features/sandbox.png)
 
 ## Integrated Debug System and Console
 To help with game development and profiling, Vertices comes with a number of debug profilers and tools.
-![Debug](https://virtexedgedesign.github.io/VerticesEngine/imgs/features/debug.png)
+![Debug](https://i.imgur.com/VYCcuGF.png)
 
 ## Farseer and BEPU physics library support
+Vertices comes with physics support for BEPU and Farseer.
 
-#Rendering Pipeline
-There is a more indepth look at the renderering pipeline over at Virtex's main site here.
+## Networking
+Vertices uses Lidgren to handle it's netcode back end, and is integrated into the engine, allowing for fast prototyping of networked games.
+
+# Rendering Pipeline
+Vertices comes with a extensible and plug-and-play renderering pipeline. There is a more indepth look at the renderering pipeline over at Virtex's main site here.
 
 ## Deferred Renderer
 ![Deferred Renderer](https://virtexedgedesign.github.io/VerticesEngine/imgs/renderpipeline/deferred.png)
 
+## Cascade Shadow Mapping
+![Cascade Shadow Mapping](https://virtexedgedesign.github.io/VerticesEngine/imgs/renderpipeline/shados.png)
+
 ## Crepuscular Rays(God Rays)
 ![Crepuscular Rays](https://virtexedgedesign.github.io/VerticesEngine/imgs/renderpipeline/godrays.png)
-
-## Depth of Field
-![Depth of Field](https://virtexedgedesign.github.io/VerticesEngine/imgs/renderpipeline/depthoffield.png)
-
-## Cascade Shadow Mapping
-![Cascade Shadow Mapping](https://virtexedgedesign.github.io/VerticesEngine/imgs/renderpipeline/shadows.png)
 
 ## Screen Space Reflections
 ![Reflections](https://virtexedgedesign.github.io/VerticesEngine/imgs/renderpipeline/ssr.png)
@@ -70,11 +98,15 @@ There is a more indepth look at the renderering pipeline over at Virtex's main s
 ## SSAO
 ![ssao](https://virtexedgedesign.github.io/VerticesEngine/imgs/renderpipeline/ssao.png)
 
-# Other features
-* Modular design allowing for smaller and more efficient 2D and 3D applications.
-* Touch screen, gamepad and traditional keyboard-mouse support.
+## Motion Blur
+<img src="https://i.imgur.com/z4PtH79.png" width="200" height="200" />
 
-# 3rd Party Library Integration
-* 3D Physics through platform independent fork of BEPU Physics.
-* 2D Physics provided by Farseer Physics library.
-* Networking support through Lidgren Networking Library.
+## Depth of Field
+![Depth of Field](https://virtexedgedesign.github.io/VerticesEngine/imgs/renderpipeline/depthoffield.png)
+
+## Emissive Materials
+![Cascade Shadow Mapping](https://i.imgur.com/vJT6gnC.png)
+
+## Renderering Debug 
+The renderering pipeline comes with a number of debug options as well, allowing to see what the scene looks like at each stage of the pre and post processing.
+![Debug](https://i.imgur.com/8YTpuvY.png)
