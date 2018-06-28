@@ -31,26 +31,44 @@ There are recently released Nuget packages which can be found through the badge 
 [nugetNA]: https://img.shields.io/badge/nuget-deprecetated-lightgray.svg
 
 # Features
-<!--## Real-time Surface and Water Reflections
-![Reflections](https://virtexedgedesign.files.wordpress.com/2015/10/reflections.png)-->
 
-## Crepuscular Rays(God Rays)
-![Crepuscular Rays](https://virtexedgedesign.files.wordpress.com/2015/10/godrays.png)
-
-## Depth of Field
-![Depth of Field](https://farm2.staticflickr.com/1476/25396320090_422ec688b0_z.jpg)
-
-## Cascade Shadow Mapping
-![Cascade Shadow Mapping](https://virtexedgedesign.files.wordpress.com/2015/10/shadowmaps.png)
+## Cross Platform
+Vertices runs on PC, OSX, Linux, iOS and Android and is coming to consoles soon.
 
 ## Extendable in-game Sandbox for Rapid Level design
-![Sandbox](https://virtexedgedesign.files.wordpress.com/2015/10/sandbox.png)
-
-## Integrated Debug System, Viewer and Console
-![Debug](https://virtexedgedesign.files.wordpress.com/2015/10/debug.png)
+A number of Vertices games are sandbox based, and so the engine is built an integrated in-game editor to add, modify and change a game on the fly.
+![sandbox](https://virtexedgedesign.github.io/VerticesEngine/imgs/features/sandbox.png)
 
 ## Customizable and Sinkable GUI system
-![GUI](https://virtexedgedesign.files.wordpress.com/2015/10/gui.png)
+Vertices supports a number of GUI elements from basic buttons and toolbars to more advanced Ribbon Bars and Property Grib controls.
+![gui](https://virtexedgedesign.github.io/VerticesEngine/imgs/features/gui.png)
+
+## Integrated Debug System and Console
+To help with game development and profiling, Vertices comes with a number of debug profilers and tools.
+![Debug](https://virtexedgedesign.github.io/VerticesEngine/imgs/features/debug.png)
+
+## Farseer and BEPU physics library support
+
+#Rendering Pipeline
+There is a more indepth look at the renderering pipeline over at Virtex's main site here.
+
+## Deferred Renderer
+![Deferred Renderer](https://virtexedgedesign.github.io/VerticesEngine/imgs/renderpipeline/deferred.png)
+
+## Crepuscular Rays(God Rays)
+![Crepuscular Rays](https://virtexedgedesign.github.io/VerticesEngine/imgs/renderpipeline/godrays.png)
+
+## Depth of Field
+![Depth of Field](https://virtexedgedesign.github.io/VerticesEngine/imgs/renderpipeline/depthoffield.png)
+
+## Cascade Shadow Mapping
+![Cascade Shadow Mapping](https://virtexedgedesign.github.io/VerticesEngine/imgs/renderpipeline/shadows.png)
+
+## Screen Space Reflections
+![Reflections](https://virtexedgedesign.github.io/VerticesEngine/imgs/renderpipeline/ssr.png)
+
+## SSAO
+![ssao](https://virtexedgedesign.github.io/VerticesEngine/imgs/renderpipeline/ssao.png)
 
 # Other features
 * Modular design allowing for smaller and more efficient 2D and 3D applications.
