@@ -61,18 +61,20 @@ Vertices runs on PC, OSX, Linux, iOS and Android and is coming to consoles soon.
 
 ## Extendable in-game Sandbox for Rapid Level design
 A number of Vertices games are sandbox based, and so the engine is built an integrated in-game editor to add, modify and change a game on the fly.
-![sandbox](https://i.imgur.com/wnCtNGX.png)
+<img src="https://i.imgur.com/wnCtNGX.png" width="700" height="420" />
 
 ## Terrain Editor
-![terrain](https://i.imgur.com/sPTtg9W.png)
+<img src="https://i.imgur.com/sPTtg9W.png" width="700" height="420" />
 
 ## Customizable and Sinkable GUI system
 Vertices supports a number of GUI elements from basic buttons and toolbars to more advanced Ribbon Bars and Property Grib controls.
-![sandbox](https://virtexedgedesign.github.io/VerticesEngine/imgs/features/sandbox.png)
+
+<img src="https://virtexedgedesign.github.io/VerticesEngine/imgs/features/sandbox.png" width="700" height="420" />
 
 ## Integrated Debug System and Console
 To help with game development and profiling, Vertices comes with a number of debug profilers and tools.
-![Debug](https://i.imgur.com/VYCcuGF.png)
+
+<img src="https://i.imgur.com/VYCcuGF.png" width="700" height="420" />
 
 ## Farseer and BEPU physics library support
 Vertices comes with physics support for BEPU and Farseer.
@@ -84,29 +86,38 @@ Vertices uses Lidgren to handle it's netcode back end, and is integrated into th
 Vertices comes with a extensible and plug-and-play renderering pipeline. There is a more indepth look at the renderering pipeline over at Virtex's main site here.
 
 ## Deferred Renderer
-![Deferred Renderer](https://virtexedgedesign.github.io/VerticesEngine/imgs/renderpipeline/deferred.png)
+
+<img src="https://virtexedgedesign.github.io/VerticesEngine/imgs/renderpipeline/deferred.png" width="700" height="420" />
 
 ## Cascade Shadow Mapping
-![Cascade Shadow Mapping](https://virtexedgedesign.github.io/VerticesEngine/imgs/renderpipeline/shados.png)
+
+<img src="https://virtexedgedesign.github.io/VerticesEngine/imgs/renderpipeline/shados.png" width="700" height="420" />
 
 ## Crepuscular Rays(God Rays)
-![Crepuscular Rays](https://virtexedgedesign.github.io/VerticesEngine/imgs/renderpipeline/godrays.png)
+
+<img src="https://virtexedgedesign.github.io/VerticesEngine/imgs/renderpipeline/godrays.png" width="700" height="420" />
 
 ## Screen Space Reflections
-![Reflections](https://virtexedgedesign.github.io/VerticesEngine/imgs/renderpipeline/ssr.png)
+
+<img src="https://virtexedgedesign.github.io/VerticesEngine/imgs/renderpipeline/ssr.png" width="700" height="420" />
 
 ## SSAO
-![ssao](https://virtexedgedesign.github.io/VerticesEngine/imgs/renderpipeline/ssao.png)
+
+<img src="https://virtexedgedesign.github.io/VerticesEngine/imgs/renderpipeline/ssao.png" width="700" height="420" />
 
 ## Motion Blur
-<img src="https://i.imgur.com/z4PtH79.png" width="200" height="200" />
+
+<img src="https://i.imgur.com/z4PtH79.png" width="700" height="420" />
 
 ## Depth of Field
-![Depth of Field](https://virtexedgedesign.github.io/VerticesEngine/imgs/renderpipeline/depthoffield.png)
+
+<img src="https://virtexedgedesign.github.io/VerticesEngine/imgs/renderpipeline/depthoffield.png" width="700" height="420" />
 
 ## Emissive Materials
-![Cascade Shadow Mapping](https://i.imgur.com/vJT6gnC.png)
+
+<img src="https://i.imgur.com/vJT6gnC.png" width="700" height="420" />
 
 ## Renderering Debug 
 The renderering pipeline comes with a number of debug options as well, allowing to see what the scene looks like at each stage of the pre and post processing.
-![Debug](https://i.imgur.com/8YTpuvY.png)
+
+<img src="https://i.imgur.com/8YTpuvY.png" width="700" height="420" />
