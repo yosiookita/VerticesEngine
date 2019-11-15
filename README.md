@@ -11,19 +11,24 @@ There are recently released Nuget packages which can be found through the badge 
 
 # Status
 
-| Platform | Build Status                   | Nuget Package|
+| Platform | Nuget Package                   | Nuget Downloads|
 |----------|--------------------------------|--|
-| DesktopGL| ![alt text][buildOGL] |[![nugetOGL](https://img.shields.io/badge/nuget-released-green.svg)](https://www.nuget.org/packages/Virtex.Lib.Vrtc.GL/)|
-| Android  | ![alt text][buildAdr] |[![nugetOGL](https://img.shields.io/badge/nuget-beta-blue.svg)](https://www.nuget.org/packages/Virtex.Lib.Vrtc.Android/)|
-| iOS      | ![alt text][buildIOS] |[![nugetOGL](https://img.shields.io/badge/nuget-tbd-orange.svg)](#)|
-| DirectX  | ![alt text][buildDrX] |[![nugetOGL](https://img.shields.io/badge/nuget-tbd-orange.svg)](#)|
+| DesktopGL| ![alt text][buildOGL] |![alt text][dwnldOGL]|
+| Android  | ![alt text][nugetTBD] |![alt text][nugetTBD]|
+| iOS      | ![alt text][nugetTBD] |![alt text][nugetTBD]|
+| DirectX  | ![alt text][nugetTBD] |![alt text][nugetTBD]|
 
 
 [buildxna]: https://img.shields.io/badge/build-depreciated-lightgray.svg
 [buildDrX]: https://img.shields.io/badge/build-tbd-orange.svg
-[buildOGL]: https://img.shields.io/badge/build-passing-green.svg
+[buildOGL]: https://img.shields.io/nuget/v/VerticesEngine.DesktopGL.svg
 [buildAdr]: https://img.shields.io/badge/build-passing-green.svg
 [buildIOS]: https://img.shields.io/badge/build-passing-green.svg
+
+[dwnldDrX]: https://img.shields.io/badge/build-tbd-orange.svg
+[dwnldOGL]: https://img.shields.io/nuget/dt/VerticesEngine.DesktopGL.svg
+[dwnldAdr]: https://img.shields.io/badge/build-passing-green.svg
+[dwnldIOS]: https://img.shields.io/badge/build-passing-green.svg
 
 [nugetSuccess]: https://img.shields.io/badge/nuget-released-green.svg
 [nugetbeta]: https://img.shields.io/badge/nuget-beta-blue.svg
