@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata minClientVersion="">
+    <id>Virtex.Lib.Vrtc.Physics.Bepu.GL</id>
+    <version>1.0.1</version>
+    <title>Virtex.Lib.Vrtc.Physics.Bepu.GL</title>
+    <authors>Virtex Edge Design/BEPU Authors</authors>
+    <owners>Virtex Edge Design</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This is a consolidated and modified version of the BEPU Physics Library for use in the Vertices Engine.</description>
+    <summary></summary>
+    <releaseNotes></releaseNotes>
+    <copyright></copyright>
+    <language></language>
+    <tags></tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.5">
+        <dependency id="MonoGame.Framework.DesktopGL" version="3.6.0.1625" />
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Core" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="System" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="System.Xml" targetFramework=".NETFramework4.5" />
+    </frameworkAssemblies>
+  </metadata>
+  <files>
+    <file src="/Users/rtroe/Projects/Virtex.Lib.Vertices/lib/Bepu/bin/GL/Release/Bepu.dll" target="lib/net45/Bepu.dll" />
+  </files>
+</package>

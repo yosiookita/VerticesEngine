@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{AD330388-6128-4ADF-AA07-6139A0DA13B1}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>TechDemo.Base</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Grid Entities\QuaterPipe.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Grid Entities\GridRamp1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Grid Entities\OABlocks.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ReflectionSurface.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\HeatHaze.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Plant.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Envrio.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Sandbox Entities\SciFiCompositieCrate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Sandbox Entities\ConcreteCube.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Sandbox Entities\Teapot.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Sandbox Entities\TechDemoItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Sandbox Entities\Rock.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Sandbox Entities\WoodenCrate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Vehicles\DrivableVehicleWheel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Vehicles\DrivableVehicle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game\Enums.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game\Game.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Properties\AssemblyInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Screens\DemoSelectScreen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Screens\ModelViewer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Screens\IntroBackground.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Screens\MainMenuScreen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GUI\Art Providers\MenuArtProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\BasicSandboxTestLevel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\FPSVillageTestBed.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\SponzaLightingTestLevel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\TechDemoTerrainSampleLevel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ArenaEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Grid Entities\GridBallx1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Grid Entities\GridCubex2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Grid Entities\GridTetrax2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Grid Entities\GridBallx2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Sandbox Entities\CompositieCrate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Metric Test Entities\TrackEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Metric Test Entities\TrackNode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Screens\IntroBackground2D.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Properties\" />
+    <Folder Include="$(MSBuildThisFileDirectory)GUI\" />
+    <Folder Include="$(MSBuildThisFileDirectory)GUI\Art Providers\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Demos\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Entities\Metric Test Entities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="$(MSBuildThisFileDirectory)Content\TechDemo.Content.mgcb" />
+  </ItemGroup>
+</Project>

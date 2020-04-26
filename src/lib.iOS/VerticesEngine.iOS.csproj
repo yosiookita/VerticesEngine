@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\..\TheChaoticWorkshop\src\src.mobile\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props" Condition="Exists('..\..\..\TheChaoticWorkshop\src\src.mobile\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props')" />
+  <Import Project="..\..\..\TheChaoticWorkshop\src\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props" Condition="Exists('..\..\..\TheChaoticWorkshop\src\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props')" />
+  <Import Project="..\Vrtc.Base\Virtex.Lib.Vrtc.Core.Base.projitems" Label="Shared" Condition="Exists('..\Vrtc.Base\Virtex.Lib.Vrtc.Core.Base.projitems')" />
+  <Import Project="..\..\..\Virtex.Game.CartoonSandbox\src\packages\Xamarin.Build.Download.0.4.6\build\Xamarin.Build.Download.props" Condition="Exists('..\..\..\Virtex.Game.CartoonSandbox\src\packages\Xamarin.Build.Download.0.4.6\build\Xamarin.Build.Download.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{090DA32D-D34D-435B-B878-5D594B4F50D6}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>lib.iOS</RootNamespace>
+    <AssemblyName>VerticesEngine.iOS</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageId>VerticesEngine.iOS</PackageId>
+    <PackageVersion>1.5.4</PackageVersion>
+    <Authors>Virtex Edge Design</Authors>
+    <Owners>Virtex Edge Design</Owners>
+    <Summary>This is the iOS port of the Vertices Engine</Summary>
+    <Title>Vertices Engine iOS Port</Title>
+    <Description>iOS port of the Vertices Engine</Description>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>__UNIFIED__;__MOBILE__;__IOS__;DEBUG;TRACE;VIRTICES_2D, VRTC_PLTFRM_iOS, DRIVER_OPENAL;VRTC_PLTFRM_MOBILE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <IOSDebuggerPort>35117</IOSDebuggerPort>
+    <DeviceSpecificBuild>false</DeviceSpecificBuild>
+    <MtouchLink></MtouchLink>
+    <MtouchHttpClientHandler></MtouchHttpClientHandler>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType></DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\iOS</OutputPath>
+    <DefineConstants>__UNIFIED__;__MOBILE__;__IOS__;TRACE;VIRTICES_2D, VRTC_PLTFRM_iOS, DRIVER_OPENAL;VRTC_PLTFRM_MOBILE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchHttpClientHandler></MtouchHttpClientHandler>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="MonoGame.Framework">
+      <HintPath>..\..\..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild\MonoGame\v3.0\Assemblies\iOS\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Farseer">
+      <HintPath>..\..\lib\Farseer\bin\GL\Debug\Farseer.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoGame.Framework.Net">
+      <HintPath>..\..\..\..\..\..\..\Library\Frameworks\MonoGame.framework\v3.6.0.1625\Assemblies\iOS\MonoGame.Framework.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Bepu">
+      <HintPath>..\..\lib\Bepu\bin\GL\Release\Bepu.dll</HintPath>
+    </Reference>
+    <Reference Include="Lidgren.GL">
+      <HintPath>..\..\nugets\Lidgren.GL.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.MobileAds">
+      <HintPath>..\packages\Xamarin.Google.iOS.MobileAds.7.31.0.1\lib\Xamarin.iOS10\Google.MobileAds.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="EngineContent\" />
+    <Folder Include="Content\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MyClass.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="EngineContent\Fonts\font_debug.xnb" />
+    <BundleResource Include="EngineContent\Fonts\font_gui.xnb" />
+    <BundleResource Include="EngineContent\Fonts\font_gui_title.xnb" />
+    <BundleResource Include="EngineContent\Fonts\font_splash.xnb" />
+    <BundleResource Include="EngineContent\Fonts\font_splash_24.xnb" />
+    <BundleResource Include="EngineContent\Fonts\font_viewer.xnb" />
+    <BundleResource Include="EngineContent\Models\lghtng\sphere.xnb" />
+    <BundleResource Include="EngineContent\Models\utils\unit_arrow\unit_arrow.xnb" />
+    <BundleResource Include="EngineContent\Models\utils\unit_box\unit_box.xnb" />
+    <BundleResource Include="EngineContent\Models\utils\unit_cylinder\unit_cylinder.xnb" />
+    <BundleResource Include="EngineContent\Models\utils\unit_plane\unit_plane.xnb" />
+    <BundleResource Include="EngineContent\Models\utils\unit_plane\unit_plane_pan.xnb" />
+    <BundleResource Include="EngineContent\Models\utils\unit_sphere\unit_sphere.xnb" />
+    <BundleResource Include="EngineContent\Models\utils\unit_torus\unit_torus.xnb" />
+    <BundleResource Include="EngineContent\Models\viewer\plane.xnb" />
+    <BundleResource Include="EngineContent\Models\viewer\plane_dds.xnb" />
+    <BundleResource Include="EngineContent\Models\water\water_plane.xnb" />
+    <BundleResource Include="EngineContent\Models\water\water_plane_ICON.xnb" />
+    <BundleResource Include="EngineContent\Models\water\water_plane_dds.xnb" />
+    <BundleResource Include="EngineContent\Models\water\water_plane_dm.xnb" />
+    <BundleResource Include="EngineContent\Models\water\water_plane_nm.xnb" />
+    <BundleResource Include="EngineContent\Models\water\water_plane_rm.xnb" />
+    <BundleResource Include="EngineContent\Models\water\waterbump.xnb" />
+    <BundleResource Include="EngineContent\Shaders\AntiAliasing\FXAA\FXAA.xnb" />
+    <BundleResource Include="EngineContent\Shaders\Bloom\BloomCombine.xnb" />
+    <BundleResource Include="EngineContent\Shaders\Bloom\BloomExtract.xnb" />
+    <BundleResource Include="EngineContent\Shaders\Bloom\GaussianBlur.xnb" />
+    <BundleResource Include="EngineContent\Shaders\Blur\CameraMotionBlur.xnb" />
+    <BundleResource Include="EngineContent\Shaders\Distorter\DistortScene.xnb" />
+    <BundleResource Include="EngineContent\Shaders\Lighting\ClearGBuffer.xnb" />
+    <BundleResource Include="EngineContent\Shaders\Lighting\CombineFinal.xnb" />
+    <BundleResource Include="EngineContent\Shaders\Lighting\DirectionalLight.xnb" />
+    <BundleResource Include="EngineContent\Shaders\Lighting\MaskedSun.xnb" />
+    <BundleResource Include="EngineContent\Shaders\Lighting\PointLight.xnb" />
+    <BundleResource Include="EngineContent\Shaders\Model Shaders\MainModelShader.xnb" />
+    <BundleResource Include="EngineContent\Shaders\ModelShaders\CellModelShader.xnb" />
+    <BundleResource Include="EngineContent\Shaders\ModelShaders\MainModelShader.xnb" />
+    <BundleResource Include="EngineContent\Shaders\ScreenSpace\SSAO.xnb" />
+    <BundleResource Include="EngineContent\Shaders\ScreenSpace\SSR.xnb" />
+    <BundleResource Include="EngineContent\Shaders\ScreenSpace\ScreenSpaceCombine.xnb" />
+    <BundleResource Include="EngineContent\Shaders\Shadows\CascadeShadowShader.xnb" />
+    <BundleResource Include="EngineContent\Shaders\Skybox\SkyBoxShader.xnb" />
+    <BundleResource Include="EngineContent\Shaders\Skybox\cube.xnb" />
+    <BundleResource Include="EngineContent\Shaders\Terrain\TerrainHeightMap.xnb" />
+    <BundleResource Include="EngineContent\Shaders\Utility\DebugShader.xnb" />
+    <BundleResource Include="EngineContent\Shaders\Utility\OutlineShader.xnb" />
+    <BundleResource Include="EngineContent\Shaders\Utility\PrepPassShader.xnb" />
+    <BundleResource Include="EngineContent\Shaders\Utility\PrepPassShader_mg.xnb" />
+    <BundleResource Include="EngineContent\Shaders\Water\WaterShader.xnb" />
+    <BundleResource Include="EngineContent\SndFx\Menu\click.xnb" />
+    <BundleResource Include="EngineContent\SndFx\Menu\confirm.xnb" />
+    <BundleResource Include="EngineContent\SndFx\Menu\error.xnb" />
+    <BundleResource Include="EngineContent\Textures\Defaults\blank.xnb" />
+    <BundleResource Include="EngineContent\Textures\Defaults\gradient.xnb" />
+    <BundleResource Include="EngineContent\Textures\Defaults\gradient_vertical.xnb" />
+    <BundleResource Include="EngineContent\Textures\Defaults\model_diffuse.xnb" />
+    <BundleResource Include="EngineContent\Textures\Defaults\model_normalmap.xnb" />
+    <BundleResource Include="EngineContent\Textures\Defaults\model_surfacemap.xnb" />
+    <BundleResource Include="EngineContent\Textures\Defaults\random.xnb" />
+    <BundleResource Include="EngineContent\Textures\Farseer\blank.xnb" />
+    <BundleResource Include="EngineContent\Textures\Farseer\dots.xnb" />
+    <BundleResource Include="EngineContent\Textures\Farseer\pavement.xnb" />
+    <BundleResource Include="EngineContent\Textures\Farseer\squares.xnb" />
+    <BundleResource Include="EngineContent\Textures\Farseer\waves.xnb" />
+    <BundleResource Include="EngineContent\Textures\Rays\Rays.xnb" />
+    <BundleResource Include="EngineContent\Textures\godrays\rays0.xnb" />
+    <BundleResource Include="EngineContent\Textures\gui\Slider\Arrow_Left.xnb" />
+    <BundleResource Include="EngineContent\Textures\gui\Slider\Arrow_Right.xnb" />
+    <BundleResource Include="EngineContent\Textures\gui\cursor\Cursor.xnb" />
+    <BundleResource Include="EngineContent\Textures\gui\icons\arrow_down.xnb" />
+    <BundleResource Include="EngineContent\Textures\gui\icons\arrow_right.xnb" />
+    <BundleResource Include="EngineContent\Textures\gui\icons\centroid.xnb" />
+    <BundleResource Include="EngineContent\Textures\gui\icons\cursor_grid.xnb" />
+    <BundleResource Include="EngineContent\Textures\gui\icons\debug_console.xnb" />
+    <BundleResource Include="EngineContent\Textures\gui\icons\debug_fbs.xnb" />
+    <BundleResource Include="EngineContent\Textures\gui\icons\debug_fps.xnb" />
+    <BundleResource Include="EngineContent\Textures\gui\icons\debug_graph.xnb" />
+    <BundleResource Include="EngineContent\Textures\gui\icons\document.xnb" />
+    <BundleResource Include="EngineContent\Textures\gui\icons\exit.xnb" />
+    <BundleResource Include="EngineContent\Textures\gui\icons\model.xnb" />
+    <BundleResource Include="EngineContent\Textures\gui\icons\model_mesh.xnb" />
+    <BundleResource Include="EngineContent\Textures\gui\icons\picture.xnb" />
+    <BundleResource Include="EngineContent\Textures\gui\icons\properties.xnb" />
+    <BundleResource Include="EngineContent\Textures\gui\icons\world.xnb" />
+    <BundleResource Include="EngineContent\Textures\gui\icons\zip.xnb" />
+    <BundleResource Include="EngineContent\Textures\gui\icons\zoom_in.xnb" />
+    <BundleResource Include="EngineContent\Textures\gui\icons\zoom_out.xnb" />
+    <BundleResource Include="EngineContent\Textures\gui\icons\zoom_selection.xnb" />
+    <BundleResource Include="EngineContent\Textures\gui\net\network_hub.xnb" />
+    <BundleResource Include="EngineContent\Textures\gui\net\network_ip.xnb" />
+    <BundleResource Include="EngineContent\Textures\gui\tree\arrow_down.xnb" />
+    <BundleResource Include="EngineContent\Textures\gui\tree\arrow_right.xnb" />
+    <BundleResource Include="EngineContent\Textures\gui\tree\tree_mesh.xnb" />
+    <BundleResource Include="EngineContent\Textures\gui\tree\tree_model.xnb" />
+    <BundleResource Include="EngineContent\Textures\gui\tree\tree_world.xnb" />
+    <BundleResource Include="EngineContent\Textures\logo\logo_72.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\fileexplorer\arrow_back.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\fileexplorer\arrow_forward.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\fileexplorer\arrow_up.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\fileexplorer\update.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\misc\bullet_arrow_down.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\misc\bullet_arrow_right.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\misc\bullet_toggle_minus.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\misc\bullet_toggle_plus.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\misc\check_box.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\misc\check_box_mixed.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\misc\check_box_uncheck.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\misc\pin_checked.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\misc\pin_unchecked.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\logo_16.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\logo_32.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\entities\entity_add_16.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\entities\entity_add_32.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\entities\terrain_add_16.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\entities\terrain_add_32.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\entities\water_add_16.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\gimbal\transform\gimbal_global.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\gimbal\transform\gimbal_local.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\main\export_16.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\main\help_16.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\main\import_16.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\main\new_16.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\main\open_16.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\main\open_32.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\main\redo_16.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\main\save_16.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\main\save_as_16.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\main\select.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\main\setting_32.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\main\test_16.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\main\test_32.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\main\undo_16.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\terrain\edit_flat.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\terrain\edit_linear.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\terrain\edit_smooth.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\terrain\exit.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\terrain\mode_sulpt.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\terrain\mode_txtrpaint.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\terrain\sculpt_avg.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\terrain\sculpt_delta.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\rbn\terrain\terrain_edit.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\terrain\exit.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\terrain\exit_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\terrain\sculpt.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\terrain\sculpt_avg.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\terrain\sculpt_avg_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\terrain\sculpt_delta.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\terrain\sculpt_delta_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\terrain\sculpt_flat.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\terrain\sculpt_flat_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\terrain\sculpt_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\terrain\sculpt_linear.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\terrain\sculpt_linear_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\terrain\sculpt_smooth.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\terrain\sculpt_smooth_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\terrain\txtrpaint.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\terrain\txtrpaint_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\terrain\txtrpaint_overlay.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\cmd\redo.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\cmd\redo_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\cmd\undo.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\cmd\undo_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\file\file_new.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\file\file_new_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\file\file_open.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\file\file_open_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\file\file_save.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\file\file_save_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\file\file_saveas.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\file\file_saveas_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\gimbal\transform\gimbal_global.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\gimbal\transform\gimbal_global_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\gimbal\transform\gimbal_local.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\gimbal\transform\gimbal_local_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\io\io_export.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\io\io_export_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\io\io_import.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\io\io_import_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\items\items_add.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\items\items_add_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\misc\bullet_arrow_down.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\misc\bullet_arrow_right.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\misc\bullet_toggle_minus.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\misc\bullet_toggle_plus.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\misc\check_box.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\misc\check_box_uncheck.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\misc\pin_checked.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\misc\pin_unchecked.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\sel\sel_addItem.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\sel\sel_addItem_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\sel\sel_selItem.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\sel\sel_selItem_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\sel\sel_terrainEdit.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\sel\sel_terrainEdit_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\terrain\exit.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\terrain\exit_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\terrain\sculpt.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\terrain\sculpt_avg.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\terrain\sculpt_avg_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\terrain\sculpt_delta.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\terrain\sculpt_delta_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\terrain\sculpt_flat.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\terrain\sculpt_flat_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\terrain\sculpt_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\terrain\sculpt_linear.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\terrain\sculpt_linear_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\terrain\sculpt_smooth.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\terrain\sculpt_smooth_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\terrain\txtrpaint.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\terrain\txtrpaint_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\terrain\txtrpaint_overlay.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\test\test_restart.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\test\test_restart_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\test\test_run.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\test\test_run_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\test\test_stop.xnb" />
+    <BundleResource Include="EngineContent\Textures\sandbox\tlbr\test\test_stop_hover.xnb" />
+    <BundleResource Include="EngineContent\Textures\terrain\Heightmap.xnb" />
+    <BundleResource Include="EngineContent\Textures\terrain\terrain_ICON.xnb" />
+    <BundleResource Include="EngineContent\Textures\terrain\cursor\cursor.xnb" />
+    <BundleResource Include="EngineContent\Textures\terrain\paint\brush_01.xnb" />
+    <BundleResource Include="EngineContent\Textures\terrain\txtrs\texture_0.xnb" />
+    <BundleResource Include="EngineContent\Textures\terrain\txtrs\texture_1.xnb" />
+    <BundleResource Include="EngineContent\Textures\terrain\txtrs\texture_2.xnb" />
+    <BundleResource Include="EngineContent\Textures\terrain\txtrs\texture_3.xnb" />
+    <BundleResource Include="EngineContent\TitleScreen\logo\spliiter.xnb" />
+    <BundleResource Include="EngineContent\TitleScreen\logo\vrtc\built_with.xnb" />
+    <BundleResource Include="EngineContent\TitleScreen\logo\vrtc\vrtc_title.xnb" />
+    <BundleResource Include="EngineContent\TitleScreen\logo\vrtx\logo_72.xnb" />
+    <BundleResource Include="EngineContent\TitleScreen\logo\vrtx\vrtx_btn.xnb" />
+    <BundleResource Include="EngineContent\TitleScreen\logo\vrtx\vrtx_title.xnb" />
+    <BundleResource Include="EngineContent\TitleScreen\sphere\sphere.xnb" />
+    <BundleResource Include="EngineContent\Shaders\Utility\IndexEncodedColourShader.xnb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Entitlements.plist" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\..\..\Virtex.Game.CartoonSandbox\src\packages\Xamarin.Build.Download.0.4.6\build\Xamarin.Build.Download.targets" Condition="Exists('..\..\..\Virtex.Game.CartoonSandbox\src\packages\Xamarin.Build.Download.0.4.6\build\Xamarin.Build.Download.targets')" />
+  <Import Project="..\..\..\Virtex.Game.CartoonSandbox\src\packages\Xamarin.Firebase.iOS.Core.4.0.3\build\Xamarin.Firebase.iOS.Core.targets" Condition="Exists('..\..\..\Virtex.Game.CartoonSandbox\src\packages\Xamarin.Firebase.iOS.Core.4.0.3\build\Xamarin.Firebase.iOS.Core.targets')" />
+  <Import Project="..\..\..\Virtex.Game.CartoonSandbox\src\packages\Xamarin.Firebase.iOS.InstanceID.2.0.0\build\Xamarin.Firebase.iOS.InstanceID.targets" Condition="Exists('..\..\..\Virtex.Game.CartoonSandbox\src\packages\Xamarin.Firebase.iOS.InstanceID.2.0.0\build\Xamarin.Firebase.iOS.InstanceID.targets')" />
+  <Import Project="..\..\..\Virtex.Game.CartoonSandbox\src\packages\Xamarin.Firebase.iOS.Analytics.4.0.2\build\Xamarin.Firebase.iOS.Analytics.targets" Condition="Exists('..\..\..\Virtex.Game.CartoonSandbox\src\packages\Xamarin.Firebase.iOS.Analytics.4.0.2\build\Xamarin.Firebase.iOS.Analytics.targets')" />
+  <Import Project="..\..\..\Virtex.Game.CartoonSandbox\src\packages\Xamarin.Google.iOS.MobileAds.7.21.0\build\Xamarin.Google.iOS.MobileAds.targets" Condition="Exists('..\..\..\Virtex.Game.CartoonSandbox\src\packages\Xamarin.Google.iOS.MobileAds.7.21.0\build\Xamarin.Google.iOS.MobileAds.targets')" />
+  <Import Project="..\..\..\TheChaoticWorkshop\src\packages\Xamarin.Google.iOS.MobileAds.7.27.0.3\build\Xamarin.Google.iOS.MobileAds.targets" Condition="Exists('..\..\..\TheChaoticWorkshop\src\packages\Xamarin.Google.iOS.MobileAds.7.27.0.3\build\Xamarin.Google.iOS.MobileAds.targets')" />
+  <Import Project="..\..\..\TheChaoticWorkshop\src\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets" Condition="Exists('..\..\..\TheChaoticWorkshop\src\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets')" />
+  <Import Project="..\..\..\TheChaoticWorkshop\src\packages\Xamarin.Firebase.iOS.Core.4.0.13.1\build\Xamarin.Firebase.iOS.Core.targets" Condition="Exists('..\..\..\TheChaoticWorkshop\src\packages\Xamarin.Firebase.iOS.Core.4.0.13.1\build\Xamarin.Firebase.iOS.Core.targets')" />
+  <Import Project="..\..\..\TheChaoticWorkshop\src\packages\Xamarin.Firebase.iOS.InstanceID.2.0.8\build\Xamarin.Firebase.iOS.InstanceID.targets" Condition="Exists('..\..\..\TheChaoticWorkshop\src\packages\Xamarin.Firebase.iOS.InstanceID.2.0.8\build\Xamarin.Firebase.iOS.InstanceID.targets')" />
+  <Import Project="..\..\..\TheChaoticWorkshop\src\packages\Xamarin.Firebase.iOS.Analytics.4.0.5.1\build\Xamarin.Firebase.iOS.Analytics.targets" Condition="Exists('..\..\..\TheChaoticWorkshop\src\packages\Xamarin.Firebase.iOS.Analytics.4.0.5.1\build\Xamarin.Firebase.iOS.Analytics.targets')" />
+  <Import Project="..\..\..\PewZoomBoom\src\packages\Xamarin.Firebase.iOS.InstanceID.3.1.1\build\Xamarin.Firebase.iOS.InstanceID.targets" Condition="Exists('..\..\..\PewZoomBoom\src\packages\Xamarin.Firebase.iOS.InstanceID.3.1.1\build\Xamarin.Firebase.iOS.InstanceID.targets')" />
+  <Import Project="..\..\..\PewZoomBoom\src\packages\Xamarin.Firebase.iOS.Analytics.5.0.1\build\Xamarin.Firebase.iOS.Analytics.targets" Condition="Exists('..\..\..\PewZoomBoom\src\packages\Xamarin.Firebase.iOS.Analytics.5.0.1\build\Xamarin.Firebase.iOS.Analytics.targets')" />
+  <Import Project="..\..\..\PewZoomBoom\src\packages\Xamarin.Google.iOS.MobileAds.7.31.0\build\Xamarin.Google.iOS.MobileAds.targets" Condition="Exists('..\..\..\PewZoomBoom\src\packages\Xamarin.Google.iOS.MobileAds.7.31.0\build\Xamarin.Google.iOS.MobileAds.targets')" />
+  <Import Project="..\..\..\TheChaoticWorkshop\src\src.mobile\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets" Condition="Exists('..\..\..\TheChaoticWorkshop\src\src.mobile\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets')" />
+  <Import Project="..\..\..\TheChaoticWorkshop\src\src.mobile\packages\Xamarin.Google.iOS.MobileAds.7.31.0.1\build\Xamarin.Google.iOS.MobileAds.targets" Condition="Exists('..\..\..\TheChaoticWorkshop\src\src.mobile\packages\Xamarin.Google.iOS.MobileAds.7.31.0.1\build\Xamarin.Google.iOS.MobileAds.targets')" />
+  <Import Project="..\packages\Xamarin.Google.iOS.MobileAds.7.31.0.1\build\Xamarin.Google.iOS.MobileAds.targets" Condition="Exists('..\packages\Xamarin.Google.iOS.MobileAds.7.31.0.1\build\Xamarin.Google.iOS.MobileAds.targets')" />
+</Project>

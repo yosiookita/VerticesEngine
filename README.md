@@ -1,39 +1,29 @@
-# Vertices Engine Tempaltes
+<p align="center">
+<img style="width: 50%;" src="https://github.com/VirtexEdgeDesign/Virtex.Lib.Vertices/blob/master/src/Content/TitleScreen/logo/vrtc/vrtc_title.png"/><p>
 
-<a href="https://twitter.com/intent/follow?screen_name=virtexedge">
-        <img src="https://img.shields.io/twitter/follow/virtexedge.svg?style=social&logo=twitter"
-            alt="follow on Twitter"></a>
+The Vertices Engine is an in-house developed engine based in built from the ground up in C#. It comes compatible with both XNA and MonoGame libraries (although 3D is still in process of being ported over) for use as the back end allowing it to be multiplatform across PC, MacOS, Linux, iOS, and Android.
 
-The Vertices Engine is the in-house developed game engine from @VirtexEdgeDesign & @rtroe based in and built from the ground up in C#. It uses @MonoGame as it's back end allowing it to run cross platform on PC, OSX, Linux, iOS and Android.
 
-There are recently released Nuget packages which can be found through the badge links below so that users can play around with Vertices on their own machines.
-           
+<p align="center">
+<img style="width: 50%;" src ="https://github.com/VirtexEdgeDesign/Virtex.Lib.Vertices/blob/master/src/Content/TitleScreen/logo/vrtx/vrtx_title.png" /></p>
 
 # Status
 
-| Platform | Nuget Package                   | Nuget Downloads|
-|----------|--------------------------------|--|
-| DesktopGL| ![alt text][buildOGL] |![alt text][dwnldOGL]|
-| Android  | ![alt text][nugetTBD] |![alt text][nugetTBD]|
-| iOS      | ![alt text][nugetTBD] |![alt text][nugetTBD]|
-| DirectX  | ![alt text][nugetTBD] |![alt text][nugetTBD]|
+| Platform | Build Status                   |
+|----------|--------------------------------|
+| XNA      | ![alt text][buildstatusXNA]    |
+| DirectX  | ![alt text][buildstatusDirctX] |
+| Windows (OpenGL)   | ![alt text][buildstatusGL]     |
+| OSX (OpenGL)   | ![alt text][buildstatusGL]     |
+| Linux (OpenGL)   | ![alt text][buildstatusGL]     |
+| Android  | ![alt text][buildstatusDroid]  |
+| iOS  | ![alt text][buildstatusIOS]  |
 
-
-[buildxna]: https://img.shields.io/badge/build-depreciated-lightgray.svg
-[buildDrX]: https://img.shields.io/badge/build-tbd-orange.svg
-[buildOGL]: https://img.shields.io/nuget/v/VerticesEngine.DesktopGL.svg
-[buildAdr]: https://img.shields.io/badge/build-passing-green.svg
-[buildIOS]: https://img.shields.io/badge/build-passing-green.svg
-
-[dwnldDrX]: https://img.shields.io/badge/build-tbd-orange.svg
-[dwnldOGL]: https://img.shields.io/nuget/dt/VerticesEngine.DesktopGL.svg
-[dwnldAdr]: https://img.shields.io/badge/build-passing-green.svg
-[dwnldIOS]: https://img.shields.io/badge/build-passing-green.svg
-
-[nugetSuccess]: https://img.shields.io/badge/nuget-released-green.svg
-[nugetbeta]: https://img.shields.io/badge/nuget-beta-blue.svg
-[nugetTBD]: https://img.shields.io/badge/nuget-comingsoon-orange.svg
-[nugetNA]: https://img.shields.io/badge/nuget-deprecetated-lightgray.svg
+[buildstatusXNA]: https://img.shields.io/badge/build-passing-brightgreen.svg
+[buildstatusDirctX]: https://img.shields.io/badge/build-tbd-blue.svg
+[buildstatusGL]: https://img.shields.io/badge/build-passing-brightgreen.svg
+[buildstatusDroid]: https://img.shields.io/badge/build-passing-brightgreen.svg
+[buildstatusIOS]: https://img.shields.io/badge/build-passing-brightgreen.svg
 
 # Features
 <!--## Real-time Surface and Water Reflections

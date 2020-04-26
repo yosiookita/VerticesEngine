@@ -1,0 +1,88 @@
+﻿
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Lidgren.Network;
+using System.Net;
+
+namespace VerticesEngine.Net.Messages
+{
+    /// <summary>
+    /// This message is used during the discovery phase to glean basic server information.
+    /// </summary>
+    public class vxNetmsgUpdatePlayerList : INetworkMessage
+    {
+
+        /// <summary>
+        /// The Server Name
+        /// </summary>
+        public List<vxNetPlayerInfo> Players;
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="playerinfo"></param>
+        public vxNetmsgUpdatePlayerList(vxNetPlayerManager playerManager)
+        {
+            Players = new List<vxNetPlayerInfo>();
+
+            //Translate the Dictionary into A list of players.
+            foreach (KeyValuePair<string, vxNetPlayerInfo> entry in playerManager.Players)
+            {
+                Players.Add(entry.Value);
+            }
+        }
+        /// <summary>
+        /// Decoding Constructor to be used by client.
+        /// </summary>
+        /// <param name="im"></param>
+        public vxNetmsgUpdatePlayerList(NetIncomingMessage im)
+        {
+            Players = new List<vxNetPlayerInfo>();
+            this.DecodeMsg(im);
+        }
+
+        /// <summary>
+        /// The Message Type
+        /// </summary>
+        public vxNetworkMessageTypes MessageType
+        {
+            get
+            {
+                return vxNetworkMessageTypes.UpdatePlayersList;
+            }
+        }
+
+        public void DecodeMsg(NetIncomingMessage im)
+        {
+            int Count = Convert.ToInt32(im.ReadString());
+
+            for (int i = 0; i < Count; i++)
+            {
+                Players.Add(new vxNetPlayerInfo(
+                    im.ReadString(),
+                im.ReadString(),
+                (vxEnumNetPlayerStatus)im.ReadInt32()));
+            }
+        }
+
+        public void EncodeMsg(NetOutgoingMessage om)
+        {
+            //First Write the number of elements
+            int Count = Players.Count;
+
+            om.Write(Count.ToString());
+
+            foreach (vxNetPlayerInfo plyr in Players)
+            {
+                int enumIndex = (int)plyr.Status;
+
+                om.Write(plyr.ID);
+                om.Write(plyr.UserName);
+                om.Write(enumIndex);
+            }
+        }
+    }
+}

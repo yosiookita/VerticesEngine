@@ -1,0 +1,121 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace VerticesEngine.Net
+{
+    public enum vxEnumNetPlayerStatus
+    {
+        /// <summary>
+        /// The player has no status, and needs to be set before doing anything else.
+        /// </summary>
+        None,
+
+        /// <summary>
+        /// The player is unconnected and searching for a server.
+        /// </summary>
+        SearchingForServer,
+
+        /// <summary>
+        /// The player is in the lobby, but not ready to start the session.
+        /// </summary>
+        InServerLobbyNotReady,
+
+        /// <summary>
+        /// The player is in the lobby, and ready to start the session.
+        /// </summary>
+        InServerLobbyReady,
+
+        /// <summary>
+        /// The player is transitioning into the game session. This is usually used to keep track of which players
+        /// in the session have loaded the level, and which ones are still loading.
+        /// </summary>
+        TransitioningToGame,
+
+        /// <summary>
+        /// The player is ready to play (or possibly is playing already)
+        /// </summary>
+        ReadyToPlay,
+
+        /// <summary>
+        /// The player is playing currently. This can be used for whether to accept new invites or not.
+        /// </summary>
+        Playing,
+
+        /// <summary>
+        /// The Player is transitioning back to the lobby.
+        /// </summary>
+        TransitioningToLobby
+    }
+
+
+
+    /// <summary>
+    /// This is a base class which holds basic information for a player in the server/client system.
+    /// </summary>
+    public class vxNetPlayerInfo
+    {
+        /// <summary>
+        /// Gets the ID of this Net Player. 
+        /// </summary>
+        public string ID { get; internal set; }
+
+
+
+        /// <summary>
+        /// Gets the Username of this player
+        /// </summary>
+        public string UserName { get; internal set; }
+
+
+
+        /// <summary>
+        /// The current Entity State
+        /// </summary>
+        public vxNetEntityState EntityState;
+
+        /// <summary>
+        /// The index of the player. Provided by the server
+        /// </summary>
+        public int PlayerIndex = -1;
+
+        /// <summary>
+        /// An Enumerator that holds where in the "Ready" phase the player is
+        /// </summary>
+        public vxEnumNetPlayerStatus Status;
+
+
+
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:VerticesEngine.Net.vxNetPlayerInfo"/> class.
+        /// </summary>
+        /// <param name="id">Identifier.</param>
+        /// <param name="username">Username.</param>
+        /// <param name="netplayerstatus">Netplayerstatus.</param>
+        public vxNetPlayerInfo(string id, string username, vxEnumNetPlayerStatus netplayerstatus)
+        {
+            this.ID = id;
+            this.UserName = username;
+            this.Status = netplayerstatus;
+
+            EntityState = new vxNetEntityState();
+        }
+
+        internal void SetID(string id)
+        {
+            ID = id;
+        }
+
+        public byte[] ToByteArray()
+        {
+            return new byte[1];
+        }
+
+        public void DecodeBuffer(byte[] buffer)
+        {
+            
+        }
+    }
+}

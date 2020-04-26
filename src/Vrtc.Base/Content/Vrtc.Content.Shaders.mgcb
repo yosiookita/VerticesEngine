@@ -1,0 +1,218 @@
+
+#----------------------------- Global Properties ----------------------------#
+
+/outputDir:../../lib.$(Platform)/EngineContent
+/intermediateDir:obj/$(Platform)
+/platform:DesktopGL
+/config:
+/profile:HiDef
+/compress:False
+
+#-------------------------------- References --------------------------------#
+
+/reference:../../packages/InfinitespaceStudios.Pipeline.1.0.8/tools/InfinitespaceStudios.Pipeline.dll
+
+#---------------------------------- Content ---------------------------------#
+
+#begin Shaders/AntiAliasing/FXAA/FXAA.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/AntiAliasing/FXAA/FXAA.fx
+
+#begin Shaders/Bloom/BloomCombine.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/Bloom/BloomCombine.fx
+
+#begin Shaders/Bloom/BloomExtract.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/Bloom/BloomExtract.fx
+
+#begin Shaders/Bloom/GaussianBlur.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/Bloom/GaussianBlur.fx
+
+#begin Shaders/Blur/CameraMotionBlur.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/Blur/CameraMotionBlur.fx
+
+#begin Shaders/Blur/SceneBlur.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/Blur/SceneBlur.fx
+
+#begin Shaders/Distorter/DistortScene.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/Distorter/DistortScene.fx
+
+#begin Shaders/EdgeDetection/CartoonEdgeDetection.Fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/EdgeDetection/CartoonEdgeDetection.Fx
+
+#begin Shaders/Lighting/ClearGBuffer.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/Lighting/ClearGBuffer.fx
+
+#begin Shaders/Lighting/CombineFinal.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/Lighting/CombineFinal.fx
+
+#begin Shaders/Lighting/DirectionalLight.fx
+/importer:EffectImporter
+/processor:RemoteEffectProcessor
+/processorParam:RemoteAddress=pipeline.infinitespace-studios.co.uk
+/processorParam:RemotePort=443
+/processorParam:Protocol=https
+/processorParam:DebugMode=Auto
+/build:Shaders/Lighting/DirectionalLight.fx
+
+#begin Shaders/Lighting/LightingCombinePass.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/Lighting/LightingCombinePass.fx
+
+#begin Shaders/Lighting/MaskedSun.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/Lighting/MaskedSun.fx
+
+#begin Shaders/Lighting/PointLight.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/Lighting/PointLight.fx
+
+#begin Shaders/Model Shaders/CellModelShader.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/Model Shaders/CellModelShader.fx
+
+#begin Shaders/Model Shaders/MainModelShader.fx
+/importer:EffectImporter
+/processor:RemoteEffectProcessor
+/processorParam:RemoteAddress=pipeline.infinitespace-studios.co.uk
+/processorParam:RemotePort=443
+/processorParam:Protocol=https
+/processorParam:DebugMode=Auto
+/build:Shaders/Model Shaders/MainModelShader.fx
+
+#begin Shaders/ScreenSpace/ScreenSpaceCombine.fx
+/importer:EffectImporter
+/processor:RemoteEffectProcessor
+/processorParam:RemoteAddress=pipeline.infinitespace-studios.co.uk
+/processorParam:RemotePort=443
+/processorParam:Protocol=https
+/processorParam:DebugMode=Auto
+/build:Shaders/ScreenSpace/ScreenSpaceCombine.fx
+
+#begin Shaders/ScreenSpace/SSAO.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/ScreenSpace/SSAO.fx
+
+#begin Shaders/ScreenSpace/SSR.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/ScreenSpace/SSR.fx
+
+#begin Shaders/Shadows/CascadeShadowShader.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/Shadows/CascadeShadowShader.fx
+
+#begin Shaders/Skybox/cube.fbx
+/importer:FbxImporter
+/processor:ModelProcessor
+/processorParam:ColorKeyColor=0,0,0,0
+/processorParam:ColorKeyEnabled=True
+/processorParam:DefaultEffect=BasicEffect
+/processorParam:GenerateMipmaps=True
+/processorParam:GenerateTangentFrames=True
+/processorParam:PremultiplyTextureAlpha=True
+/processorParam:PremultiplyVertexColors=True
+/processorParam:ResizeTexturesToPowerOfTwo=False
+/processorParam:RotationX=0
+/processorParam:RotationY=0
+/processorParam:RotationZ=0
+/processorParam:Scale=1
+/processorParam:SwapWindingOrder=False
+/processorParam:TextureFormat=DxtCompressed
+/build:Shaders/Skybox/cube.fbx
+
+#begin Shaders/Skybox/SkyBox.dds
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=False
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Shaders/Skybox/SkyBox.dds
+
+#begin Shaders/Skybox/SkyBoxShader.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/Skybox/SkyBoxShader.fx
+
+#begin Shaders/Terrain/TerrainHeightMap.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/Terrain/TerrainHeightMap.fx
+
+#begin Shaders/Utility/DebugShader.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/Utility/DebugShader.fx
+
+#begin Shaders/Utility/IndexEncodedColourShader.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/Utility/IndexEncodedColourShader.fx
+
+#begin Shaders/Utility/OutlineShader.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/Utility/OutlineShader.fx
+
+#begin Shaders/Utility/PrepPassShader.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/Utility/PrepPassShader.fx
+
+#begin Shaders/Water/WaterShader.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shaders/Water/WaterShader.fx
+

@@ -1,0 +1,565 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\Vrtc.Base\Virtex.Lib.Vrtc.Core.Base.projitems" Label="Shared" Condition="Exists('..\Vrtc.Base\Virtex.Lib.Vrtc.Core.Base.projitems')" />
+  <Import Project="..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props')" />
+  <Import Project="..\packages\Xamarin.Build.Download.0.4.9\build\Xamarin.Build.Download.props" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.9\build\Xamarin.Build.Download.props')" />
+  <Import Project="..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props')" />
+  <Import Project="..\packages\Xamarin.Build.Download.0.4.9\build\Xamarin.Build.Download.props" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.9\build\Xamarin.Build.Download.props')" />
+  <Import Project="..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ADB152A3-0AD9-49C3-B1B4-C97FC2D0D06F}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VerticesEngine.Android</RootNamespace>
+    <AssemblyName>VerticesEngine</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageId>Virtex.Lib.Vrtc.Android</PackageId>
+    <PackageVersion>1.3</PackageVersion>
+    <Authors>Virtex Edge Design</Authors>
+    <Title>Vertices Engine (Android)</Title>
+    <Description>The Vertices Engine for Android</Description>
+    <PackageIconUrl>https://virtexedgedesign.github.io/VerticesEngine/imgs/android.png</PackageIconUrl>
+    <PackageProjectUrl>https://virtexedgedesign.github.io/VerticesEngine</PackageProjectUrl>
+    <PackageReleaseNotes>This is the initial release</PackageReleaseNotes>
+    <Owners>Virtex Edge Design</Owners>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <OutputPath>bin\Android\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>
+    </DebugType>
+    <OutputPath>..\..\..\vxbin\Android\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug[Lite]|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug[Lite]\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bepu">
+      <HintPath>..\..\lib\Android\Bepu.dll</HintPath>
+    </Reference>
+    <Reference Include="Farseer">
+      <HintPath>..\..\lib\Android\Farseer.dll</HintPath>
+    </Reference>
+    <Reference Include="Lidgren.Android">
+      <HintPath>..\..\lib\Android\Lidgren.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Android" />
+    <Reference Include="mscorlib" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+    <Reference Include="MonoGame.Framework">
+      <HintPath>..\..\..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild\MonoGame\v3.0\Assemblies\Android\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoGame.Framework.Net">
+      <HintPath>..\..\..\..\..\..\..\Library\Frameworks\MonoGame.framework\v3.6.0.1625\Assemblies\Android\MonoGame.Framework.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Arch.Core.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Android.Arch.Core.Common.1.1.1.1\lib\monoandroid81\Xamarin.Android.Arch.Core.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Arch.Lifecycle.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Android.Arch.Lifecycle.Common.1.1.1.1\lib\monoandroid81\Xamarin.Android.Arch.Lifecycle.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Arch.Lifecycle.Runtime, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Android.Arch.Lifecycle.Runtime.1.1.1.1\lib\monoandroid81\Xamarin.Android.Arch.Lifecycle.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Annotations, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Android.Support.Annotations.28.0.0.1\lib\monoandroid81\Xamarin.Android.Support.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Compat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Android.Support.Compat.28.0.0.1\lib\monoandroid81\Xamarin.Android.Support.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Core.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Android.Support.Core.UI.28.0.0.1\lib\monoandroid81\Xamarin.Android.Support.Core.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Core.Utils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Android.Support.Core.Utils.28.0.0.1\lib\monoandroid81\Xamarin.Android.Support.Core.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Fragment, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Android.Support.Fragment.28.0.0.1\lib\monoandroid81\Xamarin.Android.Support.Fragment.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Media.Compat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Android.Support.Media.Compat.28.0.0.1\lib\monoandroid81\Xamarin.Android.Support.Media.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Auth, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Auth.60.1142.1\lib\MonoAndroid80\Xamarin.GooglePlayServices.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Auth.Api.Phone, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Auth.Api.Phone.60.1142.1\lib\MonoAndroid80\Xamarin.GooglePlayServices.Auth.Api.Phone.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Auth.Base, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Auth.Base.60.1142.1\lib\MonoAndroid80\Xamarin.GooglePlayServices.Auth.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Basement">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Basement.60.1142.1\lib\MonoAndroid80\Xamarin.GooglePlayServices.Basement.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Ads.Lite">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Ads.Lite.60.1142.1\lib\MonoAndroid80\Xamarin.GooglePlayServices.Ads.Lite.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Gass">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Gass.60.1142.1\lib\MonoAndroid80\Xamarin.GooglePlayServices.Gass.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Ads">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Ads.60.1142.1\lib\MonoAndroid80\Xamarin.GooglePlayServices.Ads.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Tasks">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Tasks.60.1142.1\lib\MonoAndroid80\Xamarin.GooglePlayServices.Tasks.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Base">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Base.60.1142.1\lib\MonoAndroid80\Xamarin.GooglePlayServices.Base.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Drive">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Drive.60.1142.1\lib\MonoAndroid80\Xamarin.GooglePlayServices.Drive.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Games">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Games.60.1142.1\lib\MonoAndroid80\Xamarin.GooglePlayServices.Games.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\EngineContent\Shaders\EdgeDetection\CartoonEdgeDetection.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\Blur\SceneBlur.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\Lighting\LightingCombinePass.xnb" />
+    <None Include="Content\Content.mgcb" />
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\EngineContent\Fonts\font_debug.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Fonts\font_gui.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Fonts\font_gui_title.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Fonts\font_splash.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Fonts\font_splash_24.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Fonts\font_viewer.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Models\lghtng\sphere.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Models\utils\unit_arrow\unit_arrow.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Models\utils\unit_box\unit_box.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Models\utils\unit_cylinder\unit_cylinder.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Models\utils\unit_plane\unit_plane.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Models\utils\unit_plane\unit_plane_pan.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Models\utils\unit_sphere\unit_sphere.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Models\utils\unit_torus\unit_torus.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Models\viewer\plane.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Models\viewer\plane_dds.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Models\water\water_plane.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Models\water\water_plane_ICON.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Models\water\water_plane_dds.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Models\water\water_plane_dm.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Models\water\water_plane_nm.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Models\water\water_plane_rm.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Models\water\waterbump.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\AntiAliasing\FXAA\FXAA.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\Bloom\BloomCombine.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\Bloom\BloomExtract.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\Bloom\GaussianBlur.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\Blur\CameraMotionBlur.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\Distorter\DistortScene.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\Lighting\ClearGBuffer.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\Lighting\CombineFinal.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\Lighting\DirectionalLight.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\Lighting\MaskedSun.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\Lighting\PointLight.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\Model Shaders\MainModelShader.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\ModelShaders\CellModelShader.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\ModelShaders\MainModelShader.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\Screen Space\SSAO.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\Screen Space\SSR.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\Screen Space\SSRL.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\Screen Space\ScreenSpaceCombine.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\ScreenSpace\SSAO.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\ScreenSpace\SSR.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\ScreenSpace\ScreenSpaceCombine.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\Shadows\CascadeShadowShader.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\Skybox\SkyBoxShader.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\Skybox\cube.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\Skybox\skbx_txtrcube.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\Terrain\TerrainHeightMap.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\Utility\DebugShader.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\Utility\IndexEncodedColourShader.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\Utility\OutlineShader.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\Utility\PrepPassShader.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\Utility\PrepPassShader_mg.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Shaders\Water\WaterShader.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\SndFx\Menu\click.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\SndFx\Menu\confirm.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\SndFx\Menu\error.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\Defaults\blank.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\Defaults\gradient.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\Defaults\gradient_vertical.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\Defaults\model_diffuse.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\Defaults\model_normalmap.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\Defaults\model_surfacemap.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\Defaults\random.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\Farseer\blank.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\Farseer\dots.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\Farseer\pavement.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\Farseer\squares.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\Farseer\waves.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\Rays\Rays.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\godrays\rays0.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\gui\Slider\Arrow_Left.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\gui\Slider\Arrow_Right.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\gui\cursor\Cursor.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\gui\icons\arrow_down.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\gui\icons\arrow_right.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\gui\icons\centroid.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\gui\icons\cursor_grid.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\gui\icons\debug_console.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\gui\icons\debug_fbs.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\gui\icons\debug_fps.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\gui\icons\debug_graph.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\gui\icons\document.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\gui\icons\exit.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\gui\icons\model.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\gui\icons\model_mesh.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\gui\icons\picture.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\gui\icons\properties.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\gui\icons\world.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\gui\icons\zip.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\gui\icons\zoom_in.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\gui\icons\zoom_out.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\gui\icons\zoom_selection.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\gui\net\network_hub.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\gui\net\network_ip.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\gui\tree\arrow_down.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\gui\tree\arrow_right.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\gui\tree\tree_mesh.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\gui\tree\tree_model.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\gui\tree\tree_world.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\logo\logo_72.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\fileexplorer\arrow_back.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\fileexplorer\arrow_forward.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\fileexplorer\arrow_up.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\fileexplorer\update.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\misc\bullet_arrow_down.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\misc\bullet_arrow_right.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\misc\bullet_toggle_minus.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\misc\bullet_toggle_plus.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\misc\check_box.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\misc\check_box_mixed.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\misc\check_box_uncheck.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\misc\pin_checked.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\misc\pin_unchecked.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\logo_16.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\logo_32.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\entities\entity_add_16.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\entities\entity_add_32.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\entities\terrain_add_16.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\entities\terrain_add_32.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\entities\water_add_16.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\gimbal\transform\gimbal_global.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\gimbal\transform\gimbal_local.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\main\export_16.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\main\help_16.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\main\import_16.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\main\new_16.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\main\open_16.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\main\open_32.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\main\redo_16.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\main\save_16.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\main\save_as_16.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\main\select.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\main\setting_32.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\main\test_16.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\main\test_32.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\main\undo_16.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\terrain\edit_flat.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\terrain\edit_linear.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\terrain\edit_smooth.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\terrain\exit.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\terrain\mode_sulpt.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\terrain\mode_txtrpaint.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\terrain\sculpt_avg.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\terrain\sculpt_delta.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\rbn\terrain\terrain_edit.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\terrain\exit.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\terrain\exit_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\terrain\sculpt.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\terrain\sculpt_avg.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\terrain\sculpt_avg_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\terrain\sculpt_delta.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\terrain\sculpt_delta_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\terrain\sculpt_flat.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\terrain\sculpt_flat_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\terrain\sculpt_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\terrain\sculpt_linear.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\terrain\sculpt_linear_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\terrain\sculpt_smooth.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\terrain\sculpt_smooth_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\terrain\txtrpaint.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\terrain\txtrpaint_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\terrain\txtrpaint_overlay.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\cmd\redo.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\cmd\redo_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\cmd\undo.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\cmd\undo_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\file\file_new.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\file\file_new_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\file\file_open.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\file\file_open_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\file\file_save.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\file\file_save_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\file\file_saveas.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\file\file_saveas_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\gimbal\transform\gimbal_global.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\gimbal\transform\gimbal_global_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\gimbal\transform\gimbal_local.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\gimbal\transform\gimbal_local_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\io\io_export.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\io\io_export_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\io\io_import.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\io\io_import_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\items\items_add.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\items\items_add_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\misc\bullet_arrow_down.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\misc\bullet_arrow_right.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\misc\bullet_toggle_minus.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\misc\bullet_toggle_plus.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\misc\check_box.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\misc\check_box_uncheck.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\misc\pin_checked.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\misc\pin_unchecked.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\sel\sel_addItem.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\sel\sel_addItem_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\sel\sel_selItem.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\sel\sel_selItem_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\sel\sel_terrainEdit.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\sel\sel_terrainEdit_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\terrain\exit.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\terrain\exit_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\terrain\sculpt.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\terrain\sculpt_avg.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\terrain\sculpt_avg_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\terrain\sculpt_delta.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\terrain\sculpt_delta_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\terrain\sculpt_flat.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\terrain\sculpt_flat_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\terrain\sculpt_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\terrain\sculpt_linear.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\terrain\sculpt_linear_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\terrain\sculpt_smooth.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\terrain\sculpt_smooth_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\terrain\txtrpaint.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\terrain\txtrpaint_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\terrain\txtrpaint_overlay.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\test\test_restart.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\test\test_restart_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\test\test_run.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\test\test_run_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\test\test_stop.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\sandbox\tlbr\test\test_stop_hover.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\terrain\Heightmap.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\terrain\terrain_ICON.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\terrain\cursor\cursor.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\terrain\paint\brush_01.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\terrain\txtrs\texture_0.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\terrain\txtrs\texture_1.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\terrain\txtrs\texture_2.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\Textures\terrain\txtrs\texture_3.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\TitleScreen\logo\spliiter.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\TitleScreen\logo\vrtc\built_with.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\TitleScreen\logo\vrtc\vrtc_title.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\TitleScreen\logo\vrtx\logo_72.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\TitleScreen\logo\vrtx\vrtx_btn.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\TitleScreen\logo\vrtx\vrtx_title.xnb" />
+    <AndroidAsset Include="Assets\EngineContent\TitleScreen\sphere\sphere.xnb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\values\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Import Project="packages\Xamarin.GooglePlayServices.Basement.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Basement.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Basement.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Basement.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Tasks.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Tasks.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Tasks.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Tasks.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Base.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Base.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Base.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Base.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Auth.Base.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Auth.Base.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Auth.Base.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Auth.Base.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Auth.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Auth.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Auth.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Auth.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Drive.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Drive.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Drive.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Drive.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Games.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Games.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Games.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Games.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Ads.Lite.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Ads.Lite.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Ads.Lite.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Ads.Lite.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Gass.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Gass.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Gass.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Gass.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Clearcut.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Clearcut.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Clearcut.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Clearcut.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Ads.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Ads.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Ads.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Ads.targets')" />
+  <Import Project="packages\Xamarin.Android.Support.Compat.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets" Condition="Exists('packages\Xamarin.Android.Support.Compat.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets')" />
+  <Import Project="packages\Xamarin.Android.Support.Core.UI.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Core.UI.targets" Condition="Exists('packages\Xamarin.Android.Support.Core.UI.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Core.UI.targets')" />
+  <Import Project="packages\Xamarin.Android.Support.Core.Utils.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Core.Utils.targets" Condition="Exists('packages\Xamarin.Android.Support.Core.Utils.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Core.Utils.targets')" />
+  <Import Project="packages\Xamarin.Android.Support.Media.Compat.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Media.Compat.targets" Condition="Exists('packages\Xamarin.Android.Support.Media.Compat.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Media.Compat.targets')" />
+  <Import Project="packages\Xamarin.Android.Support.Fragment.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Fragment.targets" Condition="Exists('packages\Xamarin.Android.Support.Fragment.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Fragment.targets')" />
+  <Import Project="packages\Xamarin.Android.Support.v4.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.v4.targets" Condition="Exists('packages\Xamarin.Android.Support.v4.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.v4.targets')" />
+  <Import Project="packages\Xamarin.Android.Support.Annotations.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Annotations.targets" Condition="Exists('packages\Xamarin.Android.Support.Annotations.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Annotations.targets')" />
+  <Import Project="packages\Xamarin.Android.Arch.Core.Common.1.0.0\build\MonoAndroid80\Xamarin.Android.Arch.Core.Common.targets" Condition="Exists('packages\Xamarin.Android.Arch.Core.Common.1.0.0\build\MonoAndroid80\Xamarin.Android.Arch.Core.Common.targets')" />
+  <Import Project="packages\Xamarin.Android.Arch.Lifecycle.Common.1.0.1\build\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Common.targets" Condition="Exists('packages\Xamarin.Android.Arch.Lifecycle.Common.1.0.1\build\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Common.targets')" />
+  <Import Project="packages\Xamarin.Android.Arch.Lifecycle.Runtime.1.0.0\build\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Runtime.targets" Condition="Exists('packages\Xamarin.Android.Arch.Lifecycle.Runtime.1.0.0\build\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Runtime.targets')" />
+  <Import Project="packages\Xamarin.Android.Support.Compat.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Compat.targets" Condition="Exists('packages\Xamarin.Android.Support.Compat.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Compat.targets')" />
+  <Import Project="packages\Xamarin.Android.Support.Core.UI.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Core.UI.targets" Condition="Exists('packages\Xamarin.Android.Support.Core.UI.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Core.UI.targets')" />
+  <Import Project="packages\Xamarin.Android.Support.Core.Utils.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Core.Utils.targets" Condition="Exists('packages\Xamarin.Android.Support.Core.Utils.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Core.Utils.targets')" />
+  <Import Project="packages\Xamarin.Android.Support.Fragment.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Fragment.targets" Condition="Exists('packages\Xamarin.Android.Support.Fragment.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Fragment.targets')" />
+  <Import Project="packages\Xamarin.Android.Support.Media.Compat.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Media.Compat.targets" Condition="Exists('packages\Xamarin.Android.Support.Media.Compat.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Media.Compat.targets')" />
+  <Import Project="packages\Xamarin.Android.Support.v4.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.v4.targets" Condition="Exists('packages\Xamarin.Android.Support.v4.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.v4.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Basement.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Basement.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Basement.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Basement.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Ads.Lite.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Ads.Lite.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Ads.Lite.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Ads.Lite.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Gass.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Gass.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Gass.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Gass.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Ads.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Ads.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Ads.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Ads.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Tasks.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Tasks.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Tasks.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Tasks.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Base.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Base.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Base.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Base.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Auth.Api.Phone.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.Api.Phone.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Auth.Api.Phone.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.Api.Phone.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Auth.Base.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.Base.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Auth.Base.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.Base.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Auth.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Auth.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Drive.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Drive.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Drive.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Drive.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Games.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Games.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Games.60.1142.0\build\MonoAndroid80\Xamarin.GooglePlayServices.Games.targets')" />
+  <Import Project="packages\Xamarin.Android.Arch.Core.Common.26.1.0\build\MonoAndroid80\Xamarin.Android.Arch.Core.Common.targets" Condition="Exists('packages\Xamarin.Android.Arch.Core.Common.26.1.0\build\MonoAndroid80\Xamarin.Android.Arch.Core.Common.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Basement.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Basement.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Basement.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Basement.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Ads.Lite.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Ads.Lite.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Ads.Lite.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Ads.Lite.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Gass.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Gass.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Gass.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Gass.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Ads.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Ads.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Ads.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Ads.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Tasks.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Tasks.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Tasks.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Tasks.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Base.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Base.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Base.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Base.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Auth.Api.Phone.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.Api.Phone.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Auth.Api.Phone.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.Api.Phone.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Auth.Base.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.Base.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Auth.Base.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.Base.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Auth.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Auth.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Drive.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Drive.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Drive.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Drive.targets')" />
+  <Import Project="packages\Xamarin.GooglePlayServices.Games.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Games.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Games.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Games.targets')" />
+  <Import Project="packages\Xamarin.Android.Support.Annotations.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Annotations.targets" Condition="Exists('packages\Xamarin.Android.Support.Annotations.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Annotations.targets')" />
+  <Import Project="packages\Xamarin.Android.Arch.Lifecycle.Common.1.0.3.1\build\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Common.targets" Condition="Exists('packages\Xamarin.Android.Arch.Lifecycle.Common.1.0.3.1\build\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Common.targets')" />
+  <Import Project="packages\Xamarin.Android.Arch.Lifecycle.Runtime.1.0.3.1\build\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Runtime.targets" Condition="Exists('packages\Xamarin.Android.Arch.Lifecycle.Runtime.1.0.3.1\build\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Runtime.targets')" />
+  <Import Project="packages\Xamarin.Android.Support.Compat.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Compat.targets" Condition="Exists('packages\Xamarin.Android.Support.Compat.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Compat.targets')" />
+  <Import Project="packages\Xamarin.Android.Support.Core.UI.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Core.UI.targets" Condition="Exists('packages\Xamarin.Android.Support.Core.UI.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Core.UI.targets')" />
+  <Import Project="packages\Xamarin.Android.Support.Core.Utils.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Core.Utils.targets" Condition="Exists('packages\Xamarin.Android.Support.Core.Utils.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Core.Utils.targets')" />
+  <Import Project="packages\Xamarin.Android.Support.Fragment.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Fragment.targets" Condition="Exists('packages\Xamarin.Android.Support.Fragment.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Fragment.targets')" />
+  <Import Project="packages\Xamarin.Android.Support.Media.Compat.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Media.Compat.targets" Condition="Exists('packages\Xamarin.Android.Support.Media.Compat.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Media.Compat.targets')" />
+  <Import Project="packages\Xamarin.Android.Support.v4.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.v4.targets" Condition="Exists('packages\Xamarin.Android.Support.v4.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.v4.targets')" />
+  <Import Project="packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets" Condition="Exists('packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Annotations.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Annotations.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Annotations.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Annotations.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Compat.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Compat.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Compat.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Core.UI.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Core.UI.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Core.UI.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Core.UI.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Core.Utils.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Core.Utils.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Core.Utils.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Core.Utils.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Media.Compat.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Media.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Media.Compat.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Media.Compat.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Fragment.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Fragment.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Fragment.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Fragment.targets')" />
+  <Import Project="..\packages\Xamarin.Build.Download.0.4.9\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.9\build\Xamarin.Build.Download.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Basement.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Basement.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Basement.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Basement.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Ads.Lite.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Ads.Lite.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Ads.Lite.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Ads.Lite.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Gass.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Gass.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Gass.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Gass.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Ads.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Ads.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Ads.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Ads.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Tasks.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Tasks.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Tasks.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Tasks.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Base.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Base.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Base.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Base.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Auth.Api.Phone.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.Api.Phone.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Auth.Api.Phone.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.Api.Phone.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Auth.Base.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.Base.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Auth.Base.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.Base.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Auth.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Auth.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Drive.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Drive.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Drive.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Drive.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Games.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Games.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Games.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Games.targets')" />
+  <Import Project="..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Annotations.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Annotations.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Annotations.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Annotations.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Arch.Core.Common.1.0.0.1\build\MonoAndroid80\Xamarin.Android.Arch.Core.Common.targets" Condition="Exists('..\packages\Xamarin.Android.Arch.Core.Common.1.0.0.1\build\MonoAndroid80\Xamarin.Android.Arch.Core.Common.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Arch.Lifecycle.Common.1.0.3.1\build\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Common.targets" Condition="Exists('..\packages\Xamarin.Android.Arch.Lifecycle.Common.1.0.3.1\build\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Common.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Arch.Lifecycle.Runtime.1.0.3.1\build\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Runtime.targets" Condition="Exists('..\packages\Xamarin.Android.Arch.Lifecycle.Runtime.1.0.3.1\build\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Runtime.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Compat.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Compat.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Compat.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Core.UI.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Core.UI.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Core.UI.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Core.UI.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Core.Utils.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Core.Utils.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Core.Utils.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Core.Utils.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Fragment.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Fragment.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Fragment.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Fragment.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Media.Compat.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Media.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Media.Compat.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Media.Compat.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Annotations.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Annotations.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Annotations.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Annotations.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Compat.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Compat.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Compat.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Core.UI.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Core.UI.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Core.UI.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Core.UI.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Core.Utils.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Core.Utils.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Core.Utils.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Core.Utils.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Media.Compat.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Media.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Media.Compat.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Media.Compat.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Fragment.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Fragment.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Fragment.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Fragment.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Basement.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Basement.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Basement.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Basement.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Ads.Lite.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Ads.Lite.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Ads.Lite.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Ads.Lite.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Gass.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Gass.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Gass.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Gass.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Ads.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Ads.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Ads.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Ads.targets')" />
+  <Import Project="..\packages\Xamarin.Build.Download.0.4.9\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.9\build\Xamarin.Build.Download.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Tasks.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Tasks.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Tasks.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Tasks.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Base.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Base.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Base.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Base.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Drive.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Drive.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Drive.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Drive.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Games.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Games.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Games.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Games.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Basement.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Basement.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Basement.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Basement.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Ads.Lite.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Ads.Lite.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Ads.Lite.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Ads.Lite.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Gass.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Gass.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Gass.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Gass.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Ads.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Ads.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Ads.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Ads.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Tasks.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Tasks.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Tasks.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Tasks.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Base.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Base.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Base.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Base.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Drive.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Drive.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Drive.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Drive.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Games.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Games.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Games.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Games.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Annotations.28.0.0\build\monoandroid81\Xamarin.Android.Support.Annotations.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Annotations.28.0.0\build\monoandroid81\Xamarin.Android.Support.Annotations.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Arch.Core.Common.1.1.1\build\monoandroid81\Xamarin.Android.Arch.Core.Common.targets" Condition="Exists('..\packages\Xamarin.Android.Arch.Core.Common.1.1.1\build\monoandroid81\Xamarin.Android.Arch.Core.Common.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Arch.Lifecycle.Common.1.1.1\build\monoandroid81\Xamarin.Android.Arch.Lifecycle.Common.targets" Condition="Exists('..\packages\Xamarin.Android.Arch.Lifecycle.Common.1.1.1\build\monoandroid81\Xamarin.Android.Arch.Lifecycle.Common.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Arch.Lifecycle.Runtime.1.1.1\build\monoandroid81\Xamarin.Android.Arch.Lifecycle.Runtime.targets" Condition="Exists('..\packages\Xamarin.Android.Arch.Lifecycle.Runtime.1.1.1\build\monoandroid81\Xamarin.Android.Arch.Lifecycle.Runtime.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Compat.28.0.0\build\monoandroid81\Xamarin.Android.Support.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Compat.28.0.0\build\monoandroid81\Xamarin.Android.Support.Compat.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Core.UI.28.0.0\build\monoandroid81\Xamarin.Android.Support.Core.UI.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Core.UI.28.0.0\build\monoandroid81\Xamarin.Android.Support.Core.UI.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Core.Utils.28.0.0\build\monoandroid81\Xamarin.Android.Support.Core.Utils.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Core.Utils.28.0.0\build\monoandroid81\Xamarin.Android.Support.Core.Utils.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Fragment.28.0.0\build\monoandroid81\Xamarin.Android.Support.Fragment.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Fragment.28.0.0\build\monoandroid81\Xamarin.Android.Support.Fragment.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Media.Compat.28.0.0\build\monoandroid81\Xamarin.Android.Support.Media.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Media.Compat.28.0.0\build\monoandroid81\Xamarin.Android.Support.Media.Compat.targets')" />
+  <Import Project="..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Auth.Api.Phone.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.Api.Phone.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Auth.Api.Phone.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.Api.Phone.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Xamarin.GooglePlayServices.Auth.Api.Phone.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.Api.Phone.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.GooglePlayServices.Auth.Api.Phone.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.Api.Phone.targets'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.GooglePlayServices.Auth.Base.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.Base.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.GooglePlayServices.Auth.Base.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.Base.targets'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.GooglePlayServices.Auth.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.GooglePlayServices.Auth.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.targets'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.Android.Support.Annotations.28.0.0.1\build\monoandroid81\Xamarin.Android.Support.Annotations.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Android.Support.Annotations.28.0.0.1\build\monoandroid81\Xamarin.Android.Support.Annotations.targets'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.Android.Arch.Core.Common.1.1.1.1\build\monoandroid81\Xamarin.Android.Arch.Core.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Android.Arch.Core.Common.1.1.1.1\build\monoandroid81\Xamarin.Android.Arch.Core.Common.targets'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.Android.Arch.Lifecycle.Common.1.1.1.1\build\monoandroid81\Xamarin.Android.Arch.Lifecycle.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Android.Arch.Lifecycle.Common.1.1.1.1\build\monoandroid81\Xamarin.Android.Arch.Lifecycle.Common.targets'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.Android.Arch.Lifecycle.Runtime.1.1.1.1\build\monoandroid81\Xamarin.Android.Arch.Lifecycle.Runtime.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Android.Arch.Lifecycle.Runtime.1.1.1.1\build\monoandroid81\Xamarin.Android.Arch.Lifecycle.Runtime.targets'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.Android.Support.Compat.28.0.0.1\build\monoandroid81\Xamarin.Android.Support.Compat.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Android.Support.Compat.28.0.0.1\build\monoandroid81\Xamarin.Android.Support.Compat.targets'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.Android.Support.Core.UI.28.0.0.1\build\monoandroid81\Xamarin.Android.Support.Core.UI.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Android.Support.Core.UI.28.0.0.1\build\monoandroid81\Xamarin.Android.Support.Core.UI.targets'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.Android.Support.Core.Utils.28.0.0.1\build\monoandroid81\Xamarin.Android.Support.Core.Utils.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Android.Support.Core.Utils.28.0.0.1\build\monoandroid81\Xamarin.Android.Support.Core.Utils.targets'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.Android.Support.Fragment.28.0.0.1\build\monoandroid81\Xamarin.Android.Support.Fragment.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Android.Support.Fragment.28.0.0.1\build\monoandroid81\Xamarin.Android.Support.Fragment.targets'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.Android.Support.Media.Compat.28.0.0.1\build\monoandroid81\Xamarin.Android.Support.Media.Compat.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Android.Support.Media.Compat.28.0.0.1\build\monoandroid81\Xamarin.Android.Support.Media.Compat.targets'))" />
+  </Target>
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Auth.Base.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.Base.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Auth.Base.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.Base.targets')" />
+  <Import Project="..\packages\Xamarin.GooglePlayServices.Auth.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Auth.60.1142.1\build\MonoAndroid80\Xamarin.GooglePlayServices.Auth.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Annotations.28.0.0.1\build\monoandroid81\Xamarin.Android.Support.Annotations.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Annotations.28.0.0.1\build\monoandroid81\Xamarin.Android.Support.Annotations.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Arch.Core.Common.1.1.1.1\build\monoandroid81\Xamarin.Android.Arch.Core.Common.targets" Condition="Exists('..\packages\Xamarin.Android.Arch.Core.Common.1.1.1.1\build\monoandroid81\Xamarin.Android.Arch.Core.Common.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Arch.Lifecycle.Common.1.1.1.1\build\monoandroid81\Xamarin.Android.Arch.Lifecycle.Common.targets" Condition="Exists('..\packages\Xamarin.Android.Arch.Lifecycle.Common.1.1.1.1\build\monoandroid81\Xamarin.Android.Arch.Lifecycle.Common.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Arch.Lifecycle.Runtime.1.1.1.1\build\monoandroid81\Xamarin.Android.Arch.Lifecycle.Runtime.targets" Condition="Exists('..\packages\Xamarin.Android.Arch.Lifecycle.Runtime.1.1.1.1\build\monoandroid81\Xamarin.Android.Arch.Lifecycle.Runtime.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Compat.28.0.0.1\build\monoandroid81\Xamarin.Android.Support.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Compat.28.0.0.1\build\monoandroid81\Xamarin.Android.Support.Compat.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Core.UI.28.0.0.1\build\monoandroid81\Xamarin.Android.Support.Core.UI.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Core.UI.28.0.0.1\build\monoandroid81\Xamarin.Android.Support.Core.UI.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Core.Utils.28.0.0.1\build\monoandroid81\Xamarin.Android.Support.Core.Utils.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Core.Utils.28.0.0.1\build\monoandroid81\Xamarin.Android.Support.Core.Utils.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Fragment.28.0.0.1\build\monoandroid81\Xamarin.Android.Support.Fragment.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Fragment.28.0.0.1\build\monoandroid81\Xamarin.Android.Support.Fragment.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Media.Compat.28.0.0.1\build\monoandroid81\Xamarin.Android.Support.Media.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Media.Compat.28.0.0.1\build\monoandroid81\Xamarin.Android.Support.Media.Compat.targets')" />
+</Project>

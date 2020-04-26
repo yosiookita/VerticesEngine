@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "VerticesEngine.Base", "Vrtc.Base\VerticesEngine.Base.shproj", "{14B4C0B3-E0A6-43E8-9554-C18D867C7D7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VerticesEngine.Desktop", "lib.DesktopGL\VerticesEngine.Desktop.csproj", "{3234201E-341C-425E-9DF9-D47B22BC3ADD}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "VerticesTestbed.Base", "Test Bed\src.Base\VerticesTestbed.Base.shproj", "{AD330388-6128-4ADF-AA07-6139A0DA13B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VerticesTestbed.Desktop", "Test Bed\src.GL\VerticesTestbed.Desktop.csproj", "{812D453B-13AF-4503-8255-03A9715F4195}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bepu.GL", "..\lib\Bepu\src\Bepu.GL.csproj", "{0AAD36E3-51A6-4A07-AB60-5C8A66BD38B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farseer.Portable", "..\lib\Farseer\src\Farseer.Portable.csproj", "{0AAD36E3-51A5-4A07-AB60-5C8A66BD38B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lidgren.GL", "..\lib\Lidgren\src\Lidgren.Network\Code.GL\Lidgren.GL.csproj", "{49BA1C69-6104-41AC-A5D8-B54FA9F696E8}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Vrtc.Base\Virtex.Lib.Vrtc.Core.Base.projitems*{14b4c0b3-e0a6-43e8-9554-c18d867c7d7c}*SharedItemsImports = 13
+		Vrtc.Base\Virtex.Lib.Vrtc.Core.Base.projitems*{3234201e-341c-425e-9df9-d47b22bc3add}*SharedItemsImports = 4
+		..\lib\Lidgren\src\Lidgren.Network\Lidgren.Base.projitems*{49ba1c69-6104-41ac-a5d8-b54fa9f696e8}*SharedItemsImports = 4
+		Test Bed\src.Base\TechDemo.Base.projitems*{812d453b-13af-4503-8255-03a9715f4195}*SharedItemsImports = 4
+		Test Bed\src.Base\TechDemo.Base.projitems*{ad330388-6128-4adf-aa07-6139a0da13b1}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release.Nuget|Any CPU = Release.Nuget|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3234201E-341C-425E-9DF9-D47B22BC3ADD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3234201E-341C-425E-9DF9-D47B22BC3ADD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3234201E-341C-425E-9DF9-D47B22BC3ADD}.Release.Nuget|Any CPU.ActiveCfg = Release|Any CPU
+		{3234201E-341C-425E-9DF9-D47B22BC3ADD}.Release.Nuget|Any CPU.Build.0 = Release|Any CPU
+		{3234201E-341C-425E-9DF9-D47B22BC3ADD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3234201E-341C-425E-9DF9-D47B22BC3ADD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{812D453B-13AF-4503-8255-03A9715F4195}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{812D453B-13AF-4503-8255-03A9715F4195}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{812D453B-13AF-4503-8255-03A9715F4195}.Release.Nuget|Any CPU.ActiveCfg = Release|Any CPU
+		{812D453B-13AF-4503-8255-03A9715F4195}.Release.Nuget|Any CPU.Build.0 = Release|Any CPU
+		{812D453B-13AF-4503-8255-03A9715F4195}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{812D453B-13AF-4503-8255-03A9715F4195}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AAD36E3-51A6-4A07-AB60-5C8A66BD38B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AAD36E3-51A6-4A07-AB60-5C8A66BD38B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AAD36E3-51A6-4A07-AB60-5C8A66BD38B7}.Release.Nuget|Any CPU.ActiveCfg = Release|Any CPU
+		{0AAD36E3-51A6-4A07-AB60-5C8A66BD38B7}.Release.Nuget|Any CPU.Build.0 = Release|Any CPU
+		{0AAD36E3-51A6-4A07-AB60-5C8A66BD38B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AAD36E3-51A6-4A07-AB60-5C8A66BD38B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AAD36E3-51A5-4A07-AB60-5C8A66BD38B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AAD36E3-51A5-4A07-AB60-5C8A66BD38B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AAD36E3-51A5-4A07-AB60-5C8A66BD38B7}.Release.Nuget|Any CPU.ActiveCfg = Release|Any CPU
+		{0AAD36E3-51A5-4A07-AB60-5C8A66BD38B7}.Release.Nuget|Any CPU.Build.0 = Release|Any CPU
+		{0AAD36E3-51A5-4A07-AB60-5C8A66BD38B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AAD36E3-51A5-4A07-AB60-5C8A66BD38B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49BA1C69-6104-41AC-A5D8-B54FA9F696E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49BA1C69-6104-41AC-A5D8-B54FA9F696E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49BA1C69-6104-41AC-A5D8-B54FA9F696E8}.Release.Nuget|Any CPU.ActiveCfg = Release|Any CPU
+		{49BA1C69-6104-41AC-A5D8-B54FA9F696E8}.Release.Nuget|Any CPU.Build.0 = Release|Any CPU
+		{49BA1C69-6104-41AC-A5D8-B54FA9F696E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49BA1C69-6104-41AC-A5D8-B54FA9F696E8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {60AE70E6-1066-4A30-8B2F-BA8FB77E172C}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = src\Virtex.App.Vertices.TechDemo\Virtex.App.Vertices.TechDemo.GL.csproj
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+	EndGlobalSection
+EndGlobal
