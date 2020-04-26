@@ -1,4 +1,4 @@
-# Vertices Engine Tempaltes
+# Vertices Engine
 
 <a href="https://twitter.com/intent/follow?screen_name=virtexedge">
         <img src="https://img.shields.io/twitter/follow/virtexedge.svg?style=social&logo=twitter"
