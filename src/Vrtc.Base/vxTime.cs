@@ -13,17 +13,29 @@ namespace VerticesEngine
         /// <summary>
         /// The amount of time in seconds elapsed since the last frame 
         /// </summary>
-        public static float ElapsedTime { get; private set; }
-
+        public static float ElapsedTime
+        {
+            get { return _elapsedTime; }
+        }
+        private static float _elapsedTime;
+        
         /// <summary>
         /// The total amount of time in seconds elapsed since the game started.
         /// </summary>
-        public static float TotalElapsedTime { get; private set; }
+        public static float TotalElapsedTime
+        {
+            get { return _totalElapsedTime; }
+        }
+        private static float _totalElapsedTime;
 
         /// <summary>
         /// The number of frames since the start of the game
         /// </summary>
-        public static int FrameCount { get; private set; }
+        public static int FrameCount
+        {
+            get { return _frameCount; }
+        }
+        private static int _frameCount;
 
 
         /// <summary>
@@ -32,11 +44,11 @@ namespace VerticesEngine
         /// <param name="gameTime"></param>
         internal static void Update(GameTime gameTime)
         {
-            ElapsedTime = (float)gameTime.ElapsedGameTime.TotalSeconds * (vxEngine.PlatformOS == vxPlatformOS.Windows && vxScreen.IsFullScreen == false ? 2 : 1);
+            _elapsedTime = (float)gameTime.ElapsedGameTime.TotalSeconds;// * (vxEngine.PlatformOS == vxPlatformOS.Windows && vxScreen.IsFullScreen == false ? 2 : 1);
 
-            TotalElapsedTime = (float)gameTime.TotalGameTime.TotalSeconds;
+            _totalElapsedTime = (float)gameTime.TotalGameTime.TotalSeconds;
 
-            FrameCount++;
+            _frameCount++;
         }
     }
 }

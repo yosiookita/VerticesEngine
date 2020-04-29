@@ -8,6 +8,9 @@ using VerticesEngine.Graphics;
 using VerticesEngine.UI.Controls;
 using VerticesEngine.UI.Events;
 using VerticesEngine.Utilities;
+using Microsoft.Xna.Framework.Graphics;
+using System.IO;
+using VerticesEngine.Plugins;
 
 namespace VerticesEngine
 {
@@ -83,10 +86,13 @@ namespace VerticesEngine
 		/// <param name="Height">Height.</param>
 		public vxSandboxItemButton RegisterNewSandboxItem(vxSandboxEntityRegistrationInfo EntityDescription, Vector2 ButtonPosition, int Width, int Height)
 		{
-			//First Ensure the Entity Description Is Loaded.
-			//EntityDescription.Load(Engine);
+            //First Ensure the Entity Description Is Loaded.
+            //EntityDescription.Load(Engine);
+            if(EntityDescription.Icon == null)
+            EntityDescription.Icon = GenerateSandboxItemIcon(EntityDescription);
 
-			if (RegisteredItems.ContainsKey(EntityDescription.Key))
+
+            if (RegisteredItems.ContainsKey(EntityDescription.Key))
 				throw new Exception(string.Format("Key '{0}' Already Registered in Sandbox", EntityDescription.Key));
 
 			//Next Register the Entity with the Sandbox Registrar
@@ -131,11 +137,89 @@ namespace VerticesEngine
             TempPart = AddSandboxItem(key, Matrix.Identity);
         }
 
+        protected virtual Texture2D GenerateSandboxItemIcon(vxSandboxEntityRegistrationInfo EntityDescription)
+        {
+            var Icon = vxInternalAssets.Textures.Blank;
 
-		/// <summary>
-		/// Disposes of the Currently Created Temp Part.
-		/// </summary>
-		public virtual void DisposeOfTempPart()
+            //return;
+
+            // TODO: Reinstate
+            if (File.Exists(Path.Combine(vxEngine.Instance.Game.Content.RootDirectory, EntityDescription.FilePath + "_ICON.xnb")))
+                Icon = vxEngine.Instance.Game.Content.Load<Texture2D>(EntityDescription.FilePath + "_ICON");
+            else
+            {
+                Icon = vxInternalAssets.Textures.Blank;
+
+                RenderTarget2D render = new RenderTarget2D(
+                vxEngine.Instance.GraphicsDevice,
+                    vxGameplayScene3D.SandboxItemButtonSize, vxGameplayScene3D.SandboxItemButtonSize);
+
+                // Create a new entity
+
+                System.Reflection.ConstructorInfo ctor = EntityDescription.Type.GetConstructor(new[] { typeof(vxGameplayScene3D), typeof(Vector3) });
+
+                vxEntity3D entity;
+
+                // if there isn't this constructor, then there should be one with just the scene
+                if (ctor == null)
+                {
+                    ctor = EntityDescription.Type.GetConstructor(new[] { typeof(vxGameplayScene3D) });
+                    entity = (vxEntity3D)ctor.Invoke(new object[] { this });
+                }
+                else
+                {
+                    entity = (vxEntity3D)ctor.Invoke(new object[] { this, Vector3.Zero });
+                }
+                
+                //vxEntity3D entity = NewEntityDelegate(Scene);
+
+                // Get the Bounds so that it'll fit to the screen.
+                float modelRadius = entity.BoundingShape.Radius * 2.0f;
+
+                if (modelRadius == float.PositiveInfinity)
+                    modelRadius = 750;
+
+
+                vxEngine.Instance.GraphicsDevice.SetRenderTarget(render);
+                vxEngine.Instance.GraphicsDevice.Clear(Color.DimGray * 0.5f);
+                vxEngine.Instance.GraphicsDevice.RasterizerState = RasterizerState.CullCounterClockwise;
+                                
+                var WorldMatrix = Matrix.CreateTranslation(new Vector3(0, 0, modelRadius));
+                WorldMatrix *= Matrix.CreateFromAxisAngle(Vector3.Right, -MathHelper.PiOver4 * 2 / 3) * Matrix.CreateFromAxisAngle(Vector3.Up, MathHelper.PiOver4);
+
+                var Projection = Matrix.CreateOrthographic(modelRadius, modelRadius, 0.001f, modelRadius * 2);
+                var View = Matrix.Invert(WorldMatrix);
+
+
+                entity.Draw(Matrix.CreateTranslation(-entity.ModelCenter), View, Projection, vxRenderer.Passes.OpaquePass);
+                entity.Draw(Matrix.CreateTranslation(-entity.ModelCenter), View, Projection, vxRenderer.Passes.TransparencyPass);
+
+
+                string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/MetricIcons";
+                if (Directory.Exists(folderPath) == false)
+                    Directory.CreateDirectory(folderPath);
+
+                string path = folderPath + "/" + EntityDescription.Type.Name + "_ICON.png";
+                Stream streampng = File.OpenWrite(path);
+                render.SaveAsPng(streampng, render.Width, render.Height);
+                streampng.Flush();
+                streampng.Close();
+                streampng.Dispose();
+                Icon = render;
+                vxEngine.Instance.GraphicsDevice.SetRenderTarget(null);
+                entity.Dispose();
+                //render.Dispose();
+                //Thread.Sleep(10);
+                //FileStream filestream = new FileStream(path, FileMode.Open);
+                //this.Icon = Texture2D.FromStream(Engine.GraphicsDevice, filestream);
+            }
+            return Icon;
+        }
+
+        /// <summary>
+        /// Disposes of the Currently Created Temp Part.
+        /// </summary>
+        public virtual void DisposeOfTempPart()
 		{
 			if (TempPart != null)
 			{

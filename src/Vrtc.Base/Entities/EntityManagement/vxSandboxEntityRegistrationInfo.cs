@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.IO;
 using System.Reflection;
+using VerticesEngine.Graphics;
 using VerticesEngine.Plugins;
 
 namespace VerticesEngine
@@ -120,82 +121,6 @@ namespace VerticesEngine
                 vxEntityRegister.EntitySpriteSheetRegister.Add(Key, SpriteSheetInfo);
             _contentPackKey = new vxPluginMetaInfo(contentPack);
 
-        }
-
-        public void GenerateIcon(vxGameplayScene3D scene3D)
-        {
-            this.Icon = vxInternalAssets.Textures.Blank;
-
-            return;
-
-            // TODO: Reinstate
-            //if (File.Exists(Path.Combine(Engine.Game.Content.RootDirectory, FilePath + "_ICONf.xnb")))
-            //    this.Icon = Engine.Game.Content.Load<Texture2D>(FilePath + "_ICON");
-            //else
-            //{
-            //    this.Icon = vxInternalAssets.Textures.Blank;
-
-            //    RenderTarget2D render = new RenderTarget2D(
-            //    Engine.GraphicsDevice,
-            //        vxGameplayScene3D.SandboxItemButtonSize, vxGameplayScene3D.SandboxItemButtonSize);
-
-            //    // Create a new entity
-
-            //    System.Reflection.ConstructorInfo ctor = Type.GetConstructor(new[] { typeof(vxGameplayScene3D), typeof(Vector3) });
-
-            //    vxEntity3D entity;
-
-            //    // if there isn't this constructor, then there should be one with just the scene
-            //    if (ctor == null)
-            //    {
-            //        ctor = Type.GetConstructor(new[] { typeof(vxGameplayScene3D) });
-            //        entity = (vxEntity3D)ctor.Invoke(new object[] { scene3D });
-            //    }
-            //    else
-            //    {
-            //        entity = (vxEntity3D)ctor.Invoke(new object[] { scene3D, Vector3.Zero });
-            //    }
-            //    //vxEntity3D entity = NewEntityDelegate(Scene);
-
-            //    // Get the Bounds so that it'll fit to the screen.
-            //    float zoom = entity.BoundingShape.Radius;
-            //    float modelRadius = zoom * 2.45f;
-
-            //    Engine.GraphicsDevice.SetRenderTarget(render);
-            //    Engine.GraphicsDevice.Clear(Color.DimGray * 0.25f);
-
-            //    //Matrix Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, 1, 0.001f, 10000);
-            //    Matrix Projection = Matrix.CreateOrthographic(modelRadius, modelRadius, 0.001f, modelRadius * 2);
-
-            //    var WorldMatrix = Matrix.CreateTranslation(new Vector3(0, 0, modelRadius));
-
-            //    WorldMatrix *=
-            //        Matrix.CreateFromAxisAngle(Vector3.Right, -MathHelper.PiOver4 * 2 / 3) *
-            //              Matrix.CreateFromAxisAngle(Vector3.Up, MathHelper.PiOver4);
-
-            //    var View = Matrix.Invert(WorldMatrix);
-
-            //    Engine.GraphicsDevice.RasterizerState = RasterizerState.CullCounterClockwise;
-
-            //    //entity.Draw(Matrix.CreateTranslation(-entity.ModelCenter), View, Projection, );
-
-            //    //cnt++;
-            //    //string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/" + "ICON" + cnt + ".png";
-            //    //Stream streampng = File.OpenWrite(path);
-            //    //render.SaveAsPng(streampng, render.Width, render.Height);
-            //    //streampng.Flush();
-            //    //streampng.Close();
-            //    //streampng.Dispose();
-            //    this.Icon = render;
-            //    Engine.GraphicsDevice.SetRenderTarget(null);
-            //    entity.Dispose();
-            //    //render.Dispose();
-            //    //Thread.Sleep(10);
-            //    //FileStream filestream = new FileStream(path, FileMode.Open);
-            //    //this.Icon = Texture2D.FromStream(Engine.GraphicsDevice, filestream);
-
-
-            //}
         }
     }
 }

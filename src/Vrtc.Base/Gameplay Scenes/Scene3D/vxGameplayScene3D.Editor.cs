@@ -450,39 +450,6 @@ namespace VerticesEngine
         /// </summary>
         protected void RegisterSandboxEntities()
         {
-            //string thisAssem = Assembly.GetAssembly(this.GetType()).FullName;
-            //string calling = Assembly.GetCallingAssembly().FullName;
-            //string executing = Assembly.GetCallingAssembly().FullName;
-            //string entry = Assembly.GetEntryAssembly().FullName;
-
-            //vxConsole.WriteIODebug("thisAssem : " + thisAssem);
-            //vxConsole.WriteIODebug("calling : " + calling);
-            //vxConsole.WriteIODebug("executing : " + executing);
-            //vxConsole.WriteIODebug("entry : " + entry);
-            /*
-            // pull all the relavent items together and organise them by Category and Sub Category
-            IEnumerable<Type> types = Assembly.GetAssembly(this.GetType()).GetTypesWithAttribute(typeof(vxRegisterAsSandboxEntityAttribute));
-
-
-            // Organise Sandbox Items into Categories and Sub Category Lists
-            categories.Clear();
-            foreach (var type in types)
-            {
-                vxRegisterAsSandboxEntityAttribute itemAttribute = type.GetCustomAttribute<vxRegisterAsSandboxEntityAttribute>();
-
-                // first check if this category exists.
-                if (categories.ContainsKey(itemAttribute.Category.ToString()) == false)
-                    categories.Add(itemAttribute.Category.ToString(), new vxSandboxEntityCategory(itemAttribute.Category));
-
-                // Now check if the Subcategory exits in the Category
-                if (categories[itemAttribute.Category.ToString()].SubCategories.ContainsKey(itemAttribute.SubCategory.ToString()) == false)
-                    categories[itemAttribute.Category.ToString()].SubCategories.Add(itemAttribute.SubCategory.ToString(), new vxSandboxEntitySubCategory(itemAttribute.SubCategory));
-
-                // Now finally add the type to the Sub Categories List of Types to own
-                GetSubCategory(itemAttribute).types.Add(new vxSandboxEntityRegistrationInfo(type, itemAttribute));
-            }
-            */
-
             // Now use the Category/Sub Category structure to create the proper GUI laytout
             foreach (var category in vxEntityRegister.Categories.Values)
             {
@@ -508,45 +475,7 @@ namespace VerticesEngine
             }
         }
 
-        /*
-        Dictionary<string, vxSandboxEntityCategory> categories = new Dictionary<string, vxSandboxEntityCategory>();
 
-        vxSandboxEntitySubCategory GetSubCategory(object category, object subCat)
-        {
-            return categories[category.ToString()].SubCategories[subCat];
-        }
-
-
-        vxSandboxEntitySubCategory GetSubCategory(vxRegisterAsSandboxEntityAttribute attribute)
-        {
-            return categories[attribute.Category.ToString()].SubCategories[attribute.SubCategory.ToString()];
-        }
-
-        /*
-        public class vxSandboxEntityCategory
-        {
-            public string name;
-            public Dictionary<object, vxSandboxEntitySubCategory> SubCategories = new Dictionary<object, vxSandboxEntitySubCategory>();
-
-            public vxSandboxEntityCategory(object name)
-            {
-                this.name = name.ToString().ToSentance();
-            }
-        }
-        */
-
-        /*
-        public class vxSandboxEntitySubCategory
-        {
-            public string name;
-            public List<vxEntityRegistrationInfo> types = new List<vxEntityRegistrationInfo>();
-
-            public vxSandboxEntitySubCategory(object name)
-            {
-                this.name = name.ToString().ToSentance();
-            }
-        }
-        */
         /// <summary>
         /// Shows the settings dialog for this level editor. This needs to be overriden.
         /// </summary>
@@ -671,9 +600,12 @@ namespace VerticesEngine
             var cameraGroup = new vxRibbonControlGroup(ViewTabPage, "Camera");
 
             cameraTypeDropDown = new vxRibbonDropdownControl(cameraGroup, CameraEditMode.ToString(), "Orbit");
-            cameraTypeDropDown.AddItem("Free Roam");
-            cameraTypeDropDown.AddItem("Orbit");
-            //vxEnumCameraEditMode
+
+            foreach (var cameraType in vxUtil.GetValues<vxEnumCameraEditMode>())
+            {
+                cameraTypeDropDown.AddItem(cameraType.ToString());
+            }
+
             cameraTypeDropDown.SelectionChanged += delegate {
                 CameraEditMode = (vxEnumCameraEditMode)cameraTypeDropDown.SelectedIndex;
                 UpdateViewTabItemState();
@@ -682,8 +614,12 @@ namespace VerticesEngine
             
 
             cameraProjTypeDropDown = new vxRibbonDropdownControl(cameraGroup, Cameras[0].ProjectionType.ToString(),"");
-            cameraProjTypeDropDown.AddItem(vxCameraProjectionType.Perspective.ToString());
-            cameraProjTypeDropDown.AddItem(vxCameraProjectionType.Orthographic.ToString());
+
+            foreach (var cameraProjType in vxUtil.GetValues<vxCameraProjectionType>())
+            {
+                cameraProjTypeDropDown.AddItem(cameraProjType.ToString());
+            }
+
             cameraProjTypeDropDown.SelectionChanged += delegate
             {
                 Cameras[0].ProjectionType = (vxCameraProjectionType)cameraProjTypeDropDown.SelectedIndex;

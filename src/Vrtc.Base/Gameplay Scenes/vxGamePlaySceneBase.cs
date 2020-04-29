@@ -792,14 +792,14 @@ namespace VerticesEngine
 
             // Update Camera
             //**********************************************************************************************
-            UpdateCameraChaseTarget();
-            foreach (vxCamera camera in Cameras)
-                camera.Update(gameTime);
+            
+            for (int c = 0; c < Cameras.Count; c++)
+                Cameras[c].Update(gameTime);
 
             ParticleSystem.Update(gameTime);
         }
 
-        public virtual void UpdateCameraChaseTarget() { }
+
 
         /// <summary>
         /// Main Game Update Loop which is accessed outside of the vxEngine
@@ -981,7 +981,7 @@ namespace VerticesEngine
             GraphicsDevice.SetRenderTarget(vxGraphics.FinalBackBuffer);
             SpriteBatch.Begin("Scene Draw");
 
-            for (int c = 0; c < Cameras.Count; c++)
+            for (int c = 0; c < Cameras.Count; c++) 
             {
                 //    camera.Render();
                 SpriteBatch.Draw(Cameras[c].Renderer.Finalise(), Cameras[c].Viewport.Bounds, Color.White);
@@ -1004,11 +1004,14 @@ namespace VerticesEngine
             //**********************************************************************************************
             DrawOverlayItems();
 
+            DrawHUD();
+
             //ViewportManager.ResetViewport();
         }
 
         public virtual void DrawOverlayItems() { }
 
+        public virtual void DrawHUD() { }
 
         /// <summary>
         /// Main Gameplay Draw Loop which is accessed outside of the Engine.

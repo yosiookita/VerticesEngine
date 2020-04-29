@@ -140,8 +140,9 @@ namespace VerticesEngine
         /// <summary>
         /// Draws the HUD Once the entire scene has been rendered.
         /// </summary>
-        public virtual void DrawHUD()
+        public override void DrawHUD()
         {
+            base.DrawHUD();
             DrawViewportSplitters();
         }
 

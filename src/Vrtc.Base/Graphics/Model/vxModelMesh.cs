@@ -25,7 +25,17 @@ namespace VerticesEngine.Graphics
         /// <summary>
         /// The material for this mesh. Note: a mesh may only have one material.
         /// </summary>
-        public vxMaterial Material;
+        public vxMaterial Material
+        {
+            get { return _material; }
+            set
+            {
+                _material = value;
+                _material.Initalise();
+            }
+        }
+
+        private vxMaterial _material;
 
         /// <summary>
 		/// Initializes a new instance of the <see cref="T:VerticesEngine.Base.vxModelMesh"/> class with the Main Shader.

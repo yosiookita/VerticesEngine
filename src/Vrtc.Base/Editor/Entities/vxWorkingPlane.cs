@@ -56,9 +56,9 @@ namespace VerticesEngine.Util
 
 
             vertices = new List<VertexPositionColor>();
-            for (int i = -size; i < size + 1; i += 10)
+            for (int i = -size; i < size + 1; i += 25)
             {
-                Color color = i % 100 == 0 ? Color.White : Color.Gray * 1.5f;
+                Color color = i % 500 == 0 ? Color.White : Color.Gray * 1;
 
                 vertices.Add(new VertexPositionColor(
                      new Vector3(i, 0, -size),
@@ -123,51 +123,30 @@ namespace VerticesEngine.Util
             }
             else
             {
-                WorldTransform = Matrix.CreateScale(1);
-                WorldTransform *= Matrix.CreateTranslation(Vector3.Up * (1000000));
+                WorldTransform = Matrix.CreateScale(0.35f);
+                //WorldTransform *= Matrix.CreateTranslation(Vector3.Up * (1000000));
                 WrknPlane.D = -1000000 - 0.5f;
             }
             base.Update(gameTime);
         }
-        /*
-        public override void RenderEncodedIndex(vxCamera3D Camera)
+
+        public override void Draw(vxCamera Camera, string renderpass)
         {
-            //base.RenderEncodedIndex(Camera);
-        }
-        */
-        //public override void RenderMesh(vxCamera3D Camera)
-        //{
-        //    if (IsVisible)
-        //    {
-        //        //Set Basic Effect Info
-        //        WireFrameBasicEffect.VertexColorEnabled = true;
-        //        WireFrameBasicEffect.View = Camera.View;
-        //        WireFrameBasicEffect.Projection = Camera.Projection;
-        //        WireFrameBasicEffect.World = WorldTransform;
-
-        //        //Render Vertices List
-        //        foreach (EffectPass pass in WireFrameBasicEffect.CurrentTechnique.Passes)
-        //        {
-        //            pass.Apply();
-        //            this.Engine.GraphicsDevice.DrawUserPrimitives<VertexPositionColor>(PrimitiveType.LineList, vertices.ToArray(), 0, vertices.Count / 2);
-        //        }
-        //    }
-        //}
-
-        public void DrawPlane(vxCamera3D Camera)
-        {
-            vxModel m = vxInternalAssets.Models.ViewerPlane;
-
-            foreach (Graphics.vxModelMesh mesh in m.Meshes)
+            //Update If In Edit Mode
+            if (Scene.SandboxCurrentState == vxEnumSandboxStatus.EditMode)
             {
-                PlaneBasicEffect.DiffuseColor = Color.DeepSkyBlue.ToVector3();
-                PlaneBasicEffect.View = Camera.View;
-                PlaneBasicEffect.Projection = Camera.Projection;
-                PlaneBasicEffect.World = Matrix.CreateScale(100) * Matrix.CreateTranslation(Vector3.One * -0.05f) * WorldTransform;
+                //Set Basic Effect Info
+                WireFrameBasicEffect.VertexColorEnabled = true;
+                WireFrameBasicEffect.View = Camera.View;
+                WireFrameBasicEffect.Projection = Camera.Projection;
+                WireFrameBasicEffect.World = WorldTransform * Matrix.CreateTranslation(0,0.01f,0);
 
-                PlaneBasicEffect.Alpha = 0.5f;
-                //}
-                mesh.Draw(PlaneBasicEffect);
+                //Render Vertices List
+                foreach (EffectPass pass in WireFrameBasicEffect.CurrentTechnique.Passes)
+                {
+                    pass.Apply();
+                    this.Engine.GraphicsDevice.DrawUserPrimitives<VertexPositionColor>(PrimitiveType.LineList, vertices.ToArray(), 0, vertices.Count / 2);
+                }
             }
         }
     }

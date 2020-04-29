@@ -36,7 +36,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Attributes\vxGraphicalSettingAttribute.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Attributes\vxRegisterAsSandboxEntityAttribute.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Editor\Entities\vxEditorEntity.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entities\EntityManagement\EntityPreviewIconRenderer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\EntityManagement\vxEntitySpriteSheetDefinition.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\EntityManagement\vxSandboxEntitySubCategory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\EntityManagement\vxSandboxEntityCategory.cs" />

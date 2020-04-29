@@ -46,6 +46,16 @@ namespace VerticesEngine.Utilities
             return (T)(object)nextValue;
         }
 
+        /// <summary>
+        /// Get's all values for a specific enum type
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static IEnumerable<T> GetValues<T>()
+        {
+            return Enum.GetValues(typeof(T)).Cast<T>();
+        }
+
 
         /// <summary>
         /// Returns a random Value in an Enumeration.

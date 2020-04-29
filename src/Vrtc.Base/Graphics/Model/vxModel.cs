@@ -224,21 +224,7 @@ namespace VerticesEngine.Graphics
                     if (m.Name == mesh.Name)
                     {
                         m.Material.Texture = _diffusetexture;
-                        //if (m.MainEffect.Parameters["Texture"] != null)
-                        //{
-                        //    m.MainEffect.Parameters["Texture"].SetValue(_diffusetexture);
-                        //    m.MeshParts[0].Effect.Parameters["Texture"].SetValue(_diffusetexture);
-                        //}
                     }
-
-                //foreach (var m in Meshes)
-                //    if (m.Name == mesh.Name)
-                //    {
-                //        m.UtilityEffect.DiffuseTexture = _diffusetexture;
-                //        m.DebugEffect.DiffuseTexture = _diffusetexture;
-
-                //    }
-
 
                 // Load/Create Normal Map 
                 //**************************************************************************************************************
@@ -260,16 +246,6 @@ namespace VerticesEngine.Graphics
                     {
                         m.Material.NormalMap = _normalMap;
                         m.Material.IsNormalMapEnabled = HasNormalMap;
-                        //if (m.MainEffect.Parameters["NormalMap"] != null)
-                        //{
-                        //    m.MainEffect.Parameters["NormalMap"].SetValue(_normalMap);
-                        //    m.MeshParts[0].Effect.Parameters["NormalMap"].SetValue(_normalMap);
-                        //}
-                        //if (m.MainEffect.Parameters["HasNormalMap"] != null)
-                        //{
-                        //    m.MainEffect.Parameters["HasNormalMap"].SetValue(HasNormalMap);
-                        //    m.MeshParts[0].Effect.Parameters["HasNormalMap"].SetValue(HasNormalMap);
-                        //}
                     }
 
                 //foreach (var m in Meshes)
@@ -291,15 +267,7 @@ namespace VerticesEngine.Graphics
                     if (m.Name == mesh.Name)
                     {
                         m.Material.UtilityEffect.SurfaceMap = _surfaceMap;
-                        //if (m.MainEffect.Parameters["SurfaceMap"] != null)
-                        //{
-                        //    m.MainEffect.Parameters["SurfaceMap"].SetValue(_surfaceMap);
-                        //    m.MeshParts[0].Effect.Parameters["SurfaceMap"].SetValue(_surfaceMap);
-                        //}
                     }
-                //foreach (var m in Meshes)
-                //    if (m.Name == mesh.Name)
-                //        m.UtilityEffect.SurfaceMap = _surfaceMap;
 
 
                 // Load/Create Distortion Map 

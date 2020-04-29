@@ -1,5 +1,6 @@
 ﻿
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 
 
@@ -114,7 +115,7 @@ namespace VerticesEngine
                 {
                     mesh.Material.World = world;
                     mesh.Material.WorldInverseTranspose = Matrix.Transpose(Matrix.Invert(world));
-                    mesh.Material.WVP = TempWVP;
+                    mesh.Material.WVP = world * view * projection;
                     mesh.Material.View = view;
                     mesh.Material.Projection = projection;
                     mesh.Draw();
