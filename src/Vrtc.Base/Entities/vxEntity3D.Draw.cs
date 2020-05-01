@@ -109,13 +109,14 @@ namespace VerticesEngine
         /// <param name="projection">Projection.</param>
         public virtual void Draw(Matrix world, Matrix view, Matrix projection, string renderpass)
         {
+            TempWVP = world * view * projection;
             foreach (vxModelMesh mesh in Model.Meshes)
             {
                 if (renderpass == mesh.Material.MaterialRenderPass)
                 {
                     mesh.Material.World = world;
                     mesh.Material.WorldInverseTranspose = Matrix.Transpose(Matrix.Invert(world));
-                    mesh.Material.WVP = world * view * projection;
+                    mesh.Material.WVP = TempWVP;// world * view * projection;
                     mesh.Material.View = view;
                     mesh.Material.Projection = projection;
                     mesh.Draw();

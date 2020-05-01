@@ -60,6 +60,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Graphics\Render Passes\vxScenePrepRenderingPass.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Graphics\vxRenderer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Graphics\vxMaterial.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Graphics\vxTransform.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Net\vxNetworkManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Serilization\vxSerializableColor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Types.cs" />
