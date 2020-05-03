@@ -21,8 +21,8 @@ namespace VerticesEngine.Graphics
             get { return _scale; }
             set
             {
-                isTransformDirty = true;
                 _scale = value;
+                CalcWorldTransform();
             }
         }
         private Vector3 _scale = Vector3.One;
@@ -33,16 +33,16 @@ namespace VerticesEngine.Graphics
         /// </summary>
         public Vector3 Position
         {
-            get { return _worldTransform.Translation; }
+            get { return _position; }
             set
             {
-                isTransformDirty = true;
                 _position = value;
+                CalcWorldTransform();
             }
         }
         private Vector3 _position = Vector3.Zero;
-
-
+        
+        #region -- Rotation --
 
         /// <summary>
         /// The Rotation Quaternion
@@ -52,12 +52,62 @@ namespace VerticesEngine.Graphics
             get { return _rotation; }
             set
             {
-                isTransformDirty = true;
                 _rotation = value;
+
+                CalcWorldTransform();
             }
         }
         private Quaternion _rotation = Quaternion.Identity;
 
+
+        /// <summary>
+        /// Provides the needed Y rotation for the model
+        /// </summary>
+        public float Yaw
+        {
+            get { return _yaw; }
+            set
+            {
+                _yaw = value;
+                OnSetYawPitchRoll();
+            }
+        }
+        float _yaw = 0;
+
+        /// <summary>
+        /// Provides the needed Z rotation for the model
+        /// </summary>
+        public float Pitch
+        {
+            get { return _pitch; }
+            set
+            {
+                _pitch = value;
+                OnSetYawPitchRoll();
+            }
+        }
+        float _pitch = 0;
+
+        /// <summary>
+        /// Provides the needed X rotation for the model
+        /// </summary>
+        public float Roll
+        {
+            get { return _roll; }
+            set
+            {
+                _roll = value;
+                OnSetYawPitchRoll();
+            }
+        }
+        float _roll = 0;
+
+        void OnSetYawPitchRoll()
+        {
+            Rotation = Quaternion.CreateFromYawPitchRoll(_yaw,_pitch, _roll);
+        }
+
+        #endregion
 
         /// <summary>
         /// The world transform which makes up the scale, rotation and position as a single matrix. This is 
@@ -81,13 +131,21 @@ namespace VerticesEngine.Graphics
         }
         private Matrix _worldTransform = Matrix.Identity;
 
-        bool isTransformDirty = false;
+        /// <summary>
+        /// Has a dependant variable such as position or scale been changed that requires the world transform be recalculated?
+        /// </summary>
+        private bool isTransformDirty = false;
 
-        void CalcWorldTransform()
+        /// <summary>
+        /// calucaltes the world transform matrix
+        /// </summary>
+        private void CalcWorldTransform()
         {
             _worldTransform = Matrix.CreateScale(_scale) * Matrix.CreateFromQuaternion(_rotation) * Matrix.CreateTranslation(_position);
-            
+            OnTransformUpdated();
             isTransformDirty = false;
         }
+
+        public Action OnTransformUpdated;
     }
 }

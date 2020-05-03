@@ -120,7 +120,7 @@ namespace VerticesEngine
 
 
             // Inisitalise the Selected Items Collection
-            SelectedItems = new List<vxEntity3D>();
+            _selectedItems = new List<vxEntity3D>();
 
             // Set the Hover Index to negative 1
             SelectedIndex = -1;
@@ -268,8 +268,8 @@ namespace VerticesEngine
             // an Item Increment Count to give unqiue names to items.
             IncrementalItemCount = 0;
 
-            // Initalise the Cursor
-            Gizmo = new vxGimbal(this);
+            // Initalise the Gizmo
+            _gizmo = new vxGizmo(this);
 
             //Sets The Outof sifht Position
             OutofSight = Vector3.One * 100000;
@@ -282,7 +282,7 @@ namespace VerticesEngine
             // Now Initialise all fo the Sandbox Adding/Deleting items code.
             NewSandboxItemDialog = new vxSandboxNewItemDialog( this);
 
-            WorkingPlane = new vxWorkingPlane(this, vxInternalAssets.Models.UnitPlane, new Vector3(0, 0, 0));
+            _workingPlane = new vxWorkingPlane(this, vxInternalAssets.Models.UnitPlane, new Vector3(0, 0, 0));
             ConnectedMatrix = Matrix.Identity;
             CurrentlySelectedKey = "";
 

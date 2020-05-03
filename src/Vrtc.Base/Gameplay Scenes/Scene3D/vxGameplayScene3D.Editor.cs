@@ -28,10 +28,6 @@ namespace VerticesEngine
 
     public partial class vxGameplayScene3D
     {
-        vxContextMenuControl ContextMenu;
-        vxRibbonToolbarButtonControl undoBtn;
-        vxRibbonToolbarButtonControl redoBtn;
-        vxRibbonToolbarButtonControl selcMode, tlbrNewEntity;
 
 
 
@@ -93,17 +89,12 @@ namespace VerticesEngine
                 
 
         /// <summary>
-        /// Main Tab Control Which Holds All Properties
-        /// </summary>
-        public vxSlideTabControl PropertiesTabControl;
-
-        /// <summary>
         /// Top Toolbar which holds all of the New File, Open File, Start Simulation etc... buttons.
         /// </summary>
-        public vxToolbar MainToolbar;
+        //public vxToolbar MainToolbar;
 
 
-        public vxToolbar TerrainEditorToolbar;
+        //public vxToolbar TerrainEditorToolbar;
 
 
         /// <summary>
@@ -122,7 +113,13 @@ namespace VerticesEngine
         /// <summary>
         /// List of Current Selected Items
         /// </summary>
-        public List<vxEntity3D> SelectedItems;
+        public List<vxEntity3D> SelectedItems
+        {
+            get { return _selectedItems; }
+        }
+
+
+        private List<vxEntity3D> _selectedItems;
 
         /// <summary>
         /// The Currently Selected Type of Entity to be added in the Sandbox
@@ -145,11 +142,6 @@ namespace VerticesEngine
         /// The Matrix of the Snapped Object
         /// </summary>
         public Matrix ConnectedMatrix;
-
-        /// <summary>
-        /// Working Plane
-        /// </summary>
-        public vxWorkingPlane WorkingPlane;
 
         /// <summary>
         /// Previous Working Plane Intersection Point
@@ -178,13 +170,84 @@ namespace VerticesEngine
         public bool IsGridSnap = true;
 
 
+        public Vector3 Intersection;
+
+        protected bool IsSandbox = true;
+
         public vxSandboxNewItemDialog NewSandboxItemDialog;
 
+        #region -- Sandbox Editor Entities --
 
         /// <summary>
         /// The entity editing gimbal which controls selected entity translation and rotation.
         /// </summary>
-        public vxGimbal Gizmo;
+        public vxGizmo Gizmo
+        {
+            get { return _gizmo; }
+        }
+        private vxGizmo _gizmo;
+
+        /// <summary>
+        /// Working Plane
+        /// </summary>
+        public vxWorkingPlane WorkingPlane
+        {
+            get { return _workingPlane; }
+        }
+        private vxWorkingPlane _workingPlane;
+
+        #endregion
+
+
+        #region -- UI Elemnts --
+
+
+        #region - Ribbon Control -
+
+        vxRibbonToolbarButtonControl undoBtn;
+        vxRibbonToolbarButtonControl redoBtn;
+        vxRibbonToolbarButtonControl selcMode, tlbrNewEntity;
+
+        #endregion
+
+
+        #region - Context Menu -
+
+        protected vxContextMenuControl ContextMenu;
+        protected vxContextMenuItem CntxtMenuCameraToggle;
+        protected vxContextMenuItem CntxtMenuViewProperties;
+
+        #endregion
+
+
+        #region - Property Controls -
+
+        /// <summary>
+        /// Main Tab Control Which Holds All Properties
+        /// </summary>
+        public vxSlideTabControl PropertiesTabControl;
+
+
+        /// <summary>
+        /// The vxScrollPanel control which is used too store Entity Properties. See the GetProperties Method for examples.
+        /// </summary>
+        public vxPropertiesControl EntityPropertiesControl;
+
+        private vxPropertiesControl WorlPropertiesControl;
+
+        private vxPropertiesControl EffectPropertiesControl;
+        #endregion
+
+
+        #region - Tree Controls -
+
+        private vxTreeControl TreeControl;
+        private vxTreeNode RootTreeNode;
+
+        #endregion
+
+
+        #endregion
 
         /****************************************************************************/
         /*                               EVENTS
@@ -195,31 +258,19 @@ namespace VerticesEngine
         public event EventHandler<EventArgs> ItemSelected;
 
         /// <summary>
-        /// The vxScrollPanel control which is used too store Entity Properties. See the GetProperties Method for examples.
-        /// </summary>
-		public vxPropertiesControl EntityPropertiesControl;
-
-        /// <summary>
         /// The Height Map Terrain Manager.
         /// </summary>
         public vxTerrainManager TerrainManager;
-
-
+        
         public vxSnapBox HoveredSnapBox;
+
         public Matrix HoveredSnapBoxWorld;
-
-
-        Ray MouseRay;
-
-        //vxEntity3D ParentEntityPlaceHolder;
-        //bool IsHoveringOverItem = false;
+        
+        private Ray MouseRay;
 
 
         public vxEnumTerrainEditMode TerrainEditState = vxEnumTerrainEditMode.Sculpt;
 
-
-        vxTreeControl TreeControl;
-        vxTreeNode RootTreeNode;
 
         public void ResetTree()
         {
@@ -253,11 +304,6 @@ namespace VerticesEngine
                 }
             }
         }
-
-
-
-
-        public Vector3 Intersection;
 
         public virtual bool IsSurface(vxEntity3D HoveredEntity)
         {
@@ -319,8 +365,6 @@ namespace VerticesEngine
                 }
             }
         }
-
-        protected bool IsSandbox = true;
 
         /// <summary>
         /// This method is called near the end of the LoadContent method to load al GUI Items pertaining to the 
@@ -393,14 +437,6 @@ namespace VerticesEngine
             ContextMenu.Position = new Vector2(0);
 
         }
-
-
-        vxContextMenuItem CntxtMenuCameraToggle;
-        vxContextMenuItem CntxtMenuViewProperties;
-
-
-        vxPropertiesControl WorlPropertiesControl;
-        vxPropertiesControl EffectPropertiesControl;
 
 
         /// <summary>

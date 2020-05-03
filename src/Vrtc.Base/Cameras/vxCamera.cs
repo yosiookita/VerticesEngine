@@ -198,7 +198,8 @@ namespace VerticesEngine
         public float Zoom
         {
             get { return _zoom; }
-            set {
+            set
+            {
                 _zoom = value;
                 _zoom = MathHelper.Clamp(_zoom, MinZoom, MaxZoom);
                 // Console.WriteLine(_zoom);
@@ -363,15 +364,19 @@ namespace VerticesEngine
             Renderer.totalItemsToDraw = 0;
 
             // loop through all entities and create a list of 
-            for(int i = 0; i < Engine.CurrentScene.Entities.Count; i++)
+            for (int i = 0; i < Engine.CurrentScene.Entities.Count; i++)
             {
-                // is this item in the bounding frustum
-                if(Engine.CurrentScene.Entities[i].IsEntityCullable == false ||
-                    Engine.CurrentScene.Entities[i].IsEntityCullable && BoundingFrustum.Intersects(Engine.CurrentScene.Entities[i].BoundingShape))
+                // only check if it's even enabled
+                if (Engine.CurrentScene.Entities[i].IsEnabled)
                 {
-                    // add it's index to the draw list
-                    Renderer.drawList[Renderer.totalItemsToDraw] = i;
-                    Renderer.totalItemsToDraw++;
+                    // is this item in the bounding frustum
+                    if (Engine.CurrentScene.Entities[i].IsEntityCullable == false ||
+                    Engine.CurrentScene.Entities[i].IsEntityCullable && BoundingFrustum.Intersects(Engine.CurrentScene.Entities[i].BoundingShape))
+                    {
+                        // add it's index to the draw list
+                        Renderer.drawList[Renderer.totalItemsToDraw] = i;
+                        Renderer.totalItemsToDraw++;
+                    }
                 }
             }
         }

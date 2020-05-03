@@ -38,11 +38,37 @@ namespace VerticesEngine.Util
     /// <summary>
     /// A 3D gimbal entity for use in editing Sandbox Entity Position and Rotation.
     /// </summary>
-	public class vxGimbal : vxEditorEntity
+	public class vxGizmo : vxEditorEntity
     {
         float CubeSize = 2.5f;
 
         public static float ScreenSpaceZoomFactor = 25;
+
+        public override void OnEnabled()
+        {
+            OnStateChanged(true);
+        }
+
+        public override void OnDisabled()
+        {
+            OnStateChanged(false);
+        }
+
+        void OnStateChanged(bool active)
+        {
+            for (int a = 0; a < Axes.Count; a++)
+            {
+                Axes[a].IsEnabled = active;
+            }
+            for (int p = 0; p < Pans.Count; p++)
+            {
+                Pans[p].IsEnabled = active;
+            }
+            for (int r = 0; r < Rotators.Count; r++)
+            {
+                Rotators[r].IsEnabled = active;
+            }
+        }
 
 
         public List<vxGizmoAxisTranslationEntity> Axes = new List<vxGizmoAxisTranslationEntity>();
@@ -101,7 +127,7 @@ namespace VerticesEngine.Util
         /// Initializes a new instance of the <see cref="T:VerticesEngine.Entities.Util.vxGizmo3D"/> class.
         /// </summary>
         /// <param name="scene">Scene.</param>
-        public vxGimbal(vxGameplayScene3D scene) : base(scene, vxEntityCategory.Entity)
+        public vxGizmo(vxGameplayScene3D scene) : base(scene, vxEntityCategory.Entity)
         {
             //Always Start The Cursor at the Origin
             WorldTransform = Matrix.CreateScale(CubeSize);

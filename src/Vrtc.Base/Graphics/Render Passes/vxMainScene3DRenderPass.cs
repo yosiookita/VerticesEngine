@@ -53,12 +53,15 @@ namespace VerticesEngine.Graphics
             GraphicsDevice.Clear(Renderer.Camera.BackBufferColour);
 
             // draw all of th entities
-            for(int i = 0; i < Renderer.totalItemsToDraw; i++)
+            for (int i = 0; i < Renderer.totalItemsToDraw; i++)
+            {
                 CurrentScene.Entities[Renderer.drawList[i]].Draw(Renderer.Camera, vxRenderer.Passes.OpaquePass);
+            }
 
             for (int i = 0; i < Renderer.totalItemsToDraw; i++)
+            {
                 CurrentScene.Entities[Renderer.drawList[i]].Draw(Renderer.Camera, vxRenderer.Passes.TransparencyPass);
-
+            }
 
             if (shouldDumpCurrentDrawList)
             {

@@ -86,7 +86,7 @@ namespace VerticesEngine.Graphics
             for (int i = 0; i < Renderer.totalItemsToDraw; i++)
             {
                 vxEntity3D entity = (vxEntity3D)Engine.CurrentScene.Entities[Renderer.drawList[i]];
-                if (entity.IsEntityDrawable)
+                if (entity.IsEntityDrawable && entity.IsEnabled)
                 {
                     Matrix TempWorld = entity.WorldTransform;// * Renderer.Camera.ViewProjection;
                     Matrix TempWVP = entity.WorldTransform * Renderer.Camera.ViewProjection;
@@ -184,7 +184,7 @@ namespace VerticesEngine.Graphics
 
         void DrawEntity(vxEntity3D entity)
         {
-            if (entity.IsEntityDrawable && entity.IsVisible)
+            if (entity.IsEntityDrawable && entity.IsVisible && entity.IsEnabled)
             {
                 Matrix TempWorld = entity.WorldTransform;// * Renderer.Camera.ViewProjection;
                 Matrix TempWVP = entity.WorldTransform * Renderer.Camera.ViewProjection;

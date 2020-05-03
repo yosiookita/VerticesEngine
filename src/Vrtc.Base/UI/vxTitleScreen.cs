@@ -68,7 +68,7 @@ namespace VerticesEngine.UI
         #region Initialization
 
 #if DEBUG
-        float UpdateTime = 5;
+        float UpdateTime = 0.25f;
 #else
         float UpdateTime = 5;
 #endif

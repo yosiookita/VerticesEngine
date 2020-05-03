@@ -13,7 +13,7 @@ namespace VerticesEngine.Util
     {
         public AxisDirections AxisDirections;
 
-        public vxGimbal Gimbal;
+        public vxGizmo Gimbal;
 
         public Vector3 MainAxis = Vector3.Zero;
 
@@ -25,7 +25,7 @@ namespace VerticesEngine.Util
 
         BasicEffect BasicEffect;
 
-        public vxGizmoTransformationBaseEntity(vxGameplayScene3D scene, vxGimbal Gimbal, AxisDirections AxisDirections) : base(scene, vxEntityCategory.Axis)
+        public vxGizmoTransformationBaseEntity(vxGameplayScene3D scene, vxGizmo Gimbal, AxisDirections AxisDirections) : base(scene, vxEntityCategory.Axis)
         {
             this.Gimbal = Gimbal;
 

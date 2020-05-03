@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using VerticesEngine;
+using VerticesEngine.Graphics;
 using VerticesEngine.UI;
 
 namespace VerticesEngine
@@ -51,6 +52,10 @@ namespace VerticesEngine
 		/// </summary>
         public bool ShouldDraw = true;
 
+        /// <summary>
+        /// The transform for this entity
+        /// </summary>
+        public vxTransform Transform;
 
         public Matrix WorldTransform;
 

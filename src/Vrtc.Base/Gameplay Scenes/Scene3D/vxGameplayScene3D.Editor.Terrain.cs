@@ -276,15 +276,5 @@ namespace VerticesEngine
             TexturePaintType = item.TexturePaintIndex;
             item.ToggleState = true;
         }
-
-
-
-        // Exit
-        // ***************************************************************************************************
-        private void ExitTerrainEdtiorButton_Clicked(object sender, vxGuiItemClickEventArgs e)
-        {
-            TerrainEditorToolbar.Position = new Vector2(0, -50);
-            MainToolbar.Position = new Vector2(0, 0);
-        }
     }
 }

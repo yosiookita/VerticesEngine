@@ -20,7 +20,7 @@ namespace VerticesEngine.Util
         /// <param name="scene">Scene.</param>
         /// <param name="Gimbal">Gimbal.</param>
         /// <param name="AxisDirections">Axis directions.</param>
-        public vxGizmoAxisTranslationEntity(vxGimbal Gimbal, AxisDirections AxisDirections)
+        public vxGizmoAxisTranslationEntity(vxGizmo Gimbal, AxisDirections AxisDirections)
             :base(Gimbal.Scene, Gimbal, AxisDirections)
         {
             
@@ -72,7 +72,7 @@ namespace VerticesEngine.Util
 
                 //Set the World of the Arrows
                 //Scale = Vector3.One * ParentCursor.ZoomFactor / (ParentCursor.scale * 2);
-                WorldTransform = Matrix.CreateScale(vxGimbal.ScreenSpaceZoomFactor / (Gimbal.scale)) *
+                WorldTransform = Matrix.CreateScale(vxGizmo.ScreenSpaceZoomFactor / (Gimbal.scale)) *
                     Matrix.CreateWorld(Gimbal.Position, MainAxis, PerpendicularAxis);
 
                 base.Update(gameTime);
@@ -117,7 +117,7 @@ namespace VerticesEngine.Util
                     //MouseDelta.Normalize();
                     float dot = Vector2.Dot(MouseDelta, ssVec) / 15f;
 
-                    Vector3 delta = MovementAxis * (dot) * vxGimbal.ScreenSpaceZoomFactor / (Gimbal.scale * 40);
+                    Vector3 delta = MovementAxis * (dot) * vxGizmo.ScreenSpaceZoomFactor / (Gimbal.scale * 40);
                     DeltaPosition += delta;
                     // now apply to all entities.
                     for (int i = 0; i < Scene.SelectedItems.Count; i++)

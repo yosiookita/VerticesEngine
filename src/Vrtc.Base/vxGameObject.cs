@@ -109,7 +109,7 @@ namespace VerticesEngine
         /// <summary>
         /// Called on Component Disabled
         /// </summary>
-        public void OnDisabled() { }
+        public virtual void OnDisabled() { }
 
 
         [vxShowInInspectorAttribute("Element ID", vxInspectorCategory.BasicProperties, "The Elements ID in the system.", isReadOnly:true, isDebugOnly:true)]

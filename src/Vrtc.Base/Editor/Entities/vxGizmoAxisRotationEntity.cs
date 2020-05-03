@@ -17,7 +17,7 @@ namespace VerticesEngine.Util
         /// <param name="scene">Scene.</param>
         /// <param name="Gimbal">Gimbal.</param>
         /// <param name="AxisDirections">Axis directions.</param>
-        public vxGizmoAxisRotationEntity(vxGimbal Gimbal, AxisDirections AxisDirections)
+        public vxGizmoAxisRotationEntity(vxGizmo Gimbal, AxisDirections AxisDirections)
             : base(Gimbal.Scene, Gimbal, AxisDirections)
         {
 
@@ -47,7 +47,7 @@ namespace VerticesEngine.Util
 
             Color = PlainColor;
             //Set the World of the Arrows
-            WorldTransform = Matrix.CreateScale(1.25f * vxGimbal.ScreenSpaceZoomFactor / (Gimbal.scale)) *
+            WorldTransform = Matrix.CreateScale(1.25f * vxGizmo.ScreenSpaceZoomFactor / (Gimbal.scale)) *
                 Matrix.CreateWorld(Gimbal.Position, MainAxis, PerpendicularAxis);
 
 

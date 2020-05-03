@@ -1,18 +1,13 @@
 ﻿#if __STEAM__
+using Facepunch.Steamworks;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using VerticesEngine;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System.Runtime.InteropServices;
-using Facepunch.Steamworks;
-using VerticesEngine.Community;
-using VerticesEngine.Community.Dialogs;
-using VerticesEngine.Community.Events;
-using VerticesEngine.Utilities;
 using System.IO;
+using VerticesEngine.Community;
+using VerticesEngine.Community.Events;
 using VerticesEngine.Plugins;
+using VerticesEngine.Utilities;
 
 namespace VerticesEngine.Profile
 {
